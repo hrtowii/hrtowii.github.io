@@ -18,7 +18,7 @@
 							<h1 id='clock' style='margin: 0px;'></h1>
 							<h2 id='cal' ></h1>
 						</div>
-						<div class='cat'>
+						<div class='art'>
 							&nbsp;／l、<br>
 							(⠁、.7<br>
 							&nbsp;&nbsp;|、 ~ヽ<br>
@@ -67,8 +67,8 @@
 				<tr>
 					<td colspan='2'>
 						<div class='flexbox search'>	
-							<form onsubmit="return searchDDG()" style='width: 80%;'>
-								<input type="text" placeholder="Search..." id='search_box'>
+							<form onsubmit="return searchGoogle()" style='width: 80%;'>
+								<input type="text" placeholder="Google it" id='search_box'>
 								<button type="submit"><i class="fas fa-search"></i></button>
 							</form>
 						</div>
@@ -120,9 +120,9 @@
 				return i;
 			}
 
-			function searchDDG() {
+			function searchGoogle() {
 				search_term = document.getElementById('search_box').value;
-				window.location.href = "https://duckduckgo.com/?q=" + encodeURI(search_term);
+				window.location.href = "https://google.com/?q=" + encodeURI(search_term);
 							
 				return false;
 			}
