@@ -1,0 +1,20 @@
+@import url("index.css");
+
+
+
+:root {
+
+	--bg:		#282828;
+	--fg:		#fbf1c7;
+	--title:	#f5e0dc;
+	--hl:		#e8a2af;
+	--black:	#6e6c7e;
+	--red:		#fb4934;
+	--green:	#b8bb26;
+	--yellow:	#fabd2f;
+	--blue:		#83a598;
+	--magenta:	#8f3f71;
+	--cyan:		#427b58;
+}
+
+body { background-image: url("img/gruvboxwallpaper.png"); }
