@@ -1,15 +1,15 @@
+
 @font-face {
-  font-family: 'Fira Code';
+  font-family: 'Inconsolata';
   font-style: normal;
   font-weight: 400;
   src: local(''),
-       url('/fonts/fira-code-v17-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('/fonts/fira-code-v17-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+       url('/fonts/inconsolata-v21-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('/fonts/inconsolata-v21-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
-/*   Meta   */
 
 body {
-	font-family: 'Fira Code', monospace;
+	font-family: 'Inconsolata', monospace;
 	color: var(--fg);
 	width: 100vw;
 	height: 100vh;
