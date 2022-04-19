@@ -27,7 +27,7 @@ body {
 .mainbox {
 	background-color: var(--bg);
 	border-radius: 25px;
-	padding: 12px;
+	padding: 25px;
 }
 
 .alpha {
@@ -123,7 +123,7 @@ a:hover {
 	height: 150px;
 	margin-bottom: 30px;
 	margin-right: 25px;
-	margin-left: 25px;
+	margin-left: 35px;
 }
 
 .colcir {
