@@ -16,4 +16,7 @@
 	--cyan:		#427b58;
 }
 
-body { background-image: url("img/wallpaper.png"); }
+body {
+	background-image: url("img/wallpaper.png"); 
+	background-position: center;
+}
