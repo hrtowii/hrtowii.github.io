@@ -3,17 +3,17 @@
 
 
 :root {
-	--bg:		#282828;
-	--fg:		#fbf1c7;
-	--title:	#f5e0dc;
-	--hl:		#e8a2af;
-	--black:	#6e6c7e;
-	--red:		#fb4934;
-	--green:	#b8bb26;
-	--yellow:	#fabd2f;
-	--blue:		#83a598;
-	--magenta:	#8f3f71;
-	--cyan:		#427b58;
+	--bg:		#575268;
+	--fg:		#C9CBFF;
+	--title:	#F2CDCD;
+	--hl:		#F5E0DC;
+	--black:	#161320;
+	--red:		#F28FAD;
+	--green:	#ABE9B3;
+	--yellow:	#FAE3B0;
+	--blue:		#96CDFB;
+	--magenta:	#DDB6F2;
+	--cyan:		#89DCEB;
 }
 
 body {
