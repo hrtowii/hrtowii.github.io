@@ -63,41 +63,41 @@ a:hover {
 }
 
 #navbar elements {
-  float: left;
-  display: block;
-  color: var(--foreground);
-  text-align: center;
-  padding: 15px 15px 15px 15px;
-  text-decoration: none;
-  font-size: 1.5rem;
+    float: left;
+    display: block;
+    color: var(--foreground);
+    text-align: center;
+    padding: 15px 15px 15px 15px;
+    text-decoration: none;
+    font-size: 1.5rem;
 }
 
 #navbar elements:hover {
-  background-color: var(--navhover);
-  color: var(--background);
+    background-color: var(--navhover);
+    color: var(--background);
 }
 
 #navbar elements.active {
-  background-color: var(--link);
-  color: var(--foreground);
+    background-color: var(--link);
+    color: var(--foreground);
 }
 
 #navbar elements.active:hover {
-  background-color: var(--linkhover);
-  color: var(--background);
+    background-color: var(--linkhover);
+    color: var(--background);
 }
 
 #navbar .icon {
-  display: none;
+    display: none;
 }
 
 #navbar .navsocial a {
-  float: right;
+    float: right;
 }
 
 #navbar .navsocial :not(a) {
-  padding-right: 10px;
-  padding-left: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
 }
 
 /* extra stuff */
