@@ -73,6 +73,14 @@ a:hover {
     font-size: 1.5rem;
 }
 
+#navbar li a {
+    display: block;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
 /* on hover */
 #navbar a:hover {
     background-color: var(--navhover);
