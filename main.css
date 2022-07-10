@@ -50,10 +50,10 @@ a:hover {
 /*  Navbar  */
 
 #navbar {
-    /* width: 100vw; */
+      width: 100vw;
       overflow: hidden;
       background-color: var(--navbar);
-      z-index: 2;
+      z-index: 2000;
 }
 
 .sticky {
