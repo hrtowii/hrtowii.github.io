@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono:wght@400&display=swap');
 
 :root {
-  --background: #232634;
-  --foreground: #c6d0f5;
-  --date:       #f4b8e4;
-  --navbar:     #303446;
-  --navsel:     #ca9ee6;
-  --navhover:   #f4b8e4;
-  --link:       #83a598;
-  --linkhover:  #458588;
+    --background: #232634;
+    --foreground: #c6d0f5;
+    --date:       #f4b8e4;
+    --navbar:     #303446;
+    --navsel:     #ca9ee6;
+    --navhover:   #f4b8e4;
+    --link:       #83a598;
+    --linkhover:  #458588;
 }
 
 
@@ -16,44 +16,44 @@
 
 #navbar {
     /* width: 100vw; */
-    overflow: hidden;
-    background-color: var(--navbar);
-    z-index: 2;
+      overflow: hidden;
+      background-color: var(--navbar);
+      z-index: 2;
 }
 
 .sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
+      position: fixed;
+      top: 0;
+      width: 100%;
 }
 
 /* Style the links inside the navigation bar */
 #navbar a {
-  float: left;
-  display: block;
-  color: var(--foreground);
-  text-align: center;
-  padding: 14px 16px 14px 16px;
-  text-decoration: none;
-  font-size: 1.5rem;
+    float: left;
+    display: block;
+    color: var(--foreground);
+    text-align: center;
+    padding: 14px 16px 14px 16px;
+    text-decoration: none;
+    font-size: 1.5rem;
 }
 
 /* on hover */
 #navbar a:hover {
-  background-color: var(--navhover);
-  color: var(--background);
+    background-color: var(--navhover);
+    color: var(--background);
 }
 
 #navbar a.active {
-  background-color: var(--navsel);
-  color: var(--foreground);
+    background-color: var(--navsel);
+    color: var(--foreground);
 }
 
 #navbar a.active:hover {
-  background-color: var(--navhover);
-  color: var(--background);
+    background-color: var(--navhover);
+    color: var(--background);
 }
 
 #navbar .icon {
-  display: none;
+    display: none;
 }
