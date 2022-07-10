@@ -27,11 +27,13 @@
             <p>This tutorial was made in half an hour, its really bad but should get you started on your tethered downgrade adventure!</p>
             <p>Note: A10+ Devices DONT have kpp! (YOU CAN STILL DOWNGRADE, JUST SKIP THE KPP PARTS!
             like instead of: </p>
-            <pre><code>pyimg4 im4p extract -<span class="hljs-selector-tag">i</span> kernelcache -o kcache<span class="hljs-selector-class">.raw</span> --extra kpp.bin
-            </code></pre><p>you do: </p>
-            <pre><code>pyimg4 im4p extract -<span class="hljs-selector-tag">i</span> kernelcache -o kcache.raw
-            </code></pre><p>HUGE THANKS TO <strong>galaxy#6181</strong>. Without him, I wouldn&#39;t have known all this to write a guide!</p>
-            <h1 id="requirements-">REQUIREMENTS:</h1>
+            <pre><code>pyimg4 im4p extract -i kernelcache -o kcache.raw --extra kpp.bin
+            </code></pre>
+            <p>you do: </p>
+            <pre><code>pyimg4 im4p extract -i kernelcache -o kcache.raw
+            </code></pre>
+            <p>HUGE THANKS TO <strong>galaxy#6181</strong>. Without him, I wouldn&#39;t have known all this to write a guide!</p>
+            <h1 id="requirements">REQUIREMENTS:</h1>
             <ul>
             <li>irecovery</li>
             <li>futurerestore</li>
@@ -45,142 +47,157 @@
             <li>asr64_patcher (<a href="https://github.com/exploit3dguy/asr64_patcher">https://github.com/exploit3dguy/asr64_patcher</a>)</li>
             </ul>
             <p><strong>Make sure to use the forks listed above.</strong></p>
-            <h1 id="downgrade-portion-">Downgrade portion:</h1>
+            <h1 id="downgrade-portion">Downgrade portion:</h1>
             <ol>
-            <li>Grab yourself your ipsw for iOS 14.3</li>
-            <li>Extract it and grab yourself your kernel cache and restore_ramdisk</li>
-            <li>Extract the restore_ramdisk with: img4 -i restore_ramdisk -o ramdisk.dmg</li>
-            <li>Mount it: </li>
+            <li><p>Grab yourself your ipsw for iOS 14.3</p>
+            </li>
+            <li><p>Extract it and grab yourself your kernel cache and restore_ramdisk</p>
+            </li>
+            <li><p>Extract the restore_ramdisk with: img4 -i restore_ramdisk -o ramdisk.dmg</p>
+            </li>
+            <li><p>Mount it: </p>
+            <pre><code> mkdir ramdisk &amp;&amp; hdiutil attach ramdisk.dmg -mountpoint ramdisk
+            </code></pre>
+            </li>
+            <li><p>patch the ASR in the ramdisk: </p>
+            <pre><code> asr64_patcher ramdisk/usr/sbin/asr patched_asr
+            </code></pre>
+            </li>
+            <li><p>resign it:</p>
+            <pre><code> ldid -e ramdisk/usr/sbin/asr &gt; ents.plist
+             ldid -Sents.plist patched_asr
+            </code></pre>
+            </li>
+            <li><p>Grab your restored_external: </p>
+            <pre><code> cp ramdisk/usr/local/bin/restored_external .
+            </code></pre>
+            </li>
+            <li><p>Patch it: </p>
+            <pre><code> restored_external64_patcher restored_external restored_external_patched
+            </code></pre>
+            </li>
+            <li><p>Extract the ents: </p>
+            <pre><code> ldid -e restored_external &gt; restored_externel_ents.plist
+            </code></pre>
+            </li>
+            <li><p>Remove the old ones: </p>
+            <pre><code>rm ramdisk/usr/sbin/asr &amp;&amp; rm ramdisk/usr/local/bin/restored_external
+            </code></pre>
+            </li>
+            <li><p>Resign it: </p>
+            <pre><code>ldid -Srestored_externel_ents.plist restored_external_patched
+            </code></pre>
+            </li>
+            <li><p>chmod them: </p>
+            <pre><code>chmod -R 755 restored_external_patched
+            chmod -R 755 patched_asr
+            </code></pre>
+            </li>
+            <li><p>Copy them back: </p>
+            <pre><code>cp -a restored_external_patched ramdisk/usr/local/bin/restored_external
+            cp -a patched_asr ramdisk/usr/sbin/asr
+            </code></pre>
+            </li>
+            <li><p>Detach from the ramdisk: </p>
+            <pre><code>hdiutil detach ramdisk
+            </code></pre>
+            </li>
+            <li><p>Rebuild the ramdisk (dont sign it tho, futurerestore will):</p>
+            <pre><code>pyimg4 im4p create -i ramdisk.dmg -o ramdisk.im4p -f rdsk
+            </code></pre>
+            </li>
+            <li><p>Extract the kernel:</p>
+            <pre><code>pyimg4 im4p extract -i kernelcache -o kcache.raw --extra kpp.bin
+            </code></pre>
+            </li>
             </ol>
-            <pre><code>    <span class="hljs-built_in">mkdir</span> ramdisk &amp;&amp; hdiutil <span class="hljs-built_in">attach</span> ramdisk.dmg -mountpoint ramdisk
-            </code></pre><ol>
-            <li>patch the ASR in the ramdisk: </li>
-            </ol>
-            <pre><code>    <span class="hljs-keyword">asr64_patcher </span>ramdisk/usr/sbin/<span class="hljs-keyword">asr </span>patched_asr
-            </code></pre><ol>
-            <li>resign it:</li>
-            </ol>
-            <pre><code>    ldid -e ramdisk/usr/sbin/asr &gt; ents<span class="hljs-selector-class">.plist</span>
-                ldid -Sents<span class="hljs-selector-class">.plist</span> patched_asr
-            </code></pre><ol>
-            <li>Grab your restored_external: </li>
-            </ol>
-            <pre><code>    <span class="hljs-meta">cp</span> ramdisk/usr/local/<span class="hljs-keyword">bin/restored_external </span>.
-            </code></pre><ol>
-            <li>Patch it: </li>
-            </ol>
-            <pre><code>    <span class="hljs-attribute">restored_external64_patcher</span> restored_external restored_external_patched
-            </code></pre><ol>
-            <li>Extract the ents: </li>
-            </ol>
-            <pre><code>    ldid <span class="hljs-_">-e</span> restored_external &gt; restored_externel_ents.plist
-            </code></pre><ol>
-            <li>Remove the old ones: </li>
-            </ol>
-            <pre><code>    rm ramdisk<span class="hljs-regexp">/usr/</span>sbin<span class="hljs-regexp">/asr &amp;&amp; rm ramdisk/u</span>sr<span class="hljs-regexp">/local/</span>bin<span class="hljs-regexp">/restored_external</span>
-            </code></pre><ol>
-            <li>Resign it: </li>
-            </ol>
-            <pre><code>    ldid -Srestored_externel_ents<span class="hljs-selector-class">.plist</span> restored_external_patched
-            </code></pre><ol>
-            <li>chmod them: </li>
-            </ol>
-            <pre><code>    chmod -R <span class="hljs-number">755</span> restored_external_patched
-                chmod -R <span class="hljs-number">755</span> patched_asr
-            </code></pre><ol>
-            <li>Copy them back: </li>
-            </ol>
-            <pre><code>    cp -<span class="hljs-selector-tag">a</span> restored_external_patched ramdisk/usr/local/bin/restored_external
-                cp -<span class="hljs-selector-tag">a</span> patched_asr ramdisk/usr/sbin/asr
-            </code></pre><ol>
-            <li>Detach from the ramdisk: </li>
-            </ol>
-            <pre><code>    hdiutil <span class="hljs-built_in">detach</span> ramdisk
-            </code></pre><ol>
-            <li>Rebuild the ramdisk (dont sign it tho, futurerestore will):</li>
-            </ol>
-            <pre><code>    pyimg4 im4p create -<span class="hljs-selector-tag">i</span> ramdisk<span class="hljs-selector-class">.dmg</span> -o ramdisk<span class="hljs-selector-class">.im4p</span> -f rdsk
-            </code></pre><ol>
-            <li>Extract the kernel:</li>
-            </ol>
-            <pre><code>    pyimg4 im4p extract -<span class="hljs-selector-tag">i</span> kernelcache -o kcache<span class="hljs-selector-class">.raw</span> --extra kpp<span class="hljs-selector-class">.bin</span> 
-            </code></pre><p>(leave out --extra kpp.bin if you dont have kpp)</p>
-            <ol>
-            <li>Patch it: </li>
-            </ol>
-            <pre><code>    Kernel64Patcher kcache<span class="hljs-selector-class">.raw</span> krnl<span class="hljs-selector-class">.patched</span> -f -a
-            </code></pre><ol>
-            <li>Rebuild the kernel:</li>
-            </ol>
-            <pre><code>    pyimg4 im4p create -<span class="hljs-selector-tag">i</span> krnl<span class="hljs-selector-class">.patched</span> -o krnl<span class="hljs-selector-class">.im4p</span> --extra kpp<span class="hljs-selector-class">.bin</span> -f rkrn --lzss (leave out --extra kpp<span class="hljs-selector-class">.bin</span> <span class="hljs-keyword">if</span> you dont have kpp)
-            </code></pre><ol>
-            <li>You can now restore with futurerestore via this command (blob can be for ANY version):</li>
+            <p>(leave out --extra kpp.bin if you dont have kpp)</p>
+            <ol start="17">
+            <li><p>Patch it: </p>
+            <pre><code>Kernel64Patcher kcache.raw krnl.patched -f -a
+            </code></pre>
+            </li>
+            <li><p>Rebuild the kernel:</p>
+            <pre><code>pyimg4 im4p create -i krnl.patched -o krnl.im4p --extra kpp.bin -f rkrn --lzss (leave out --extra kpp.bin if you dont have kpp)
+            </code></pre>
+            </li>
+            <li><p>You can now restore with futurerestore via this command (blob can be for ANY version):</p>
+            </li>
             </ol>
             <p><strong>(MAKE SURE YOU ARE IN PWNDFU WITH SIGCHECKS REMOVED!)</strong></p>
-            <pre><code>    <span class="hljs-comment">futurerestore</span> <span class="hljs-literal">-</span><span class="hljs-comment">t</span> <span class="hljs-comment">shsh</span><span class="hljs-string">.</span><span class="hljs-comment">shsh2</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">use</span><span class="hljs-literal">-</span><span class="hljs-comment">pwndfu</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">skip</span><span class="hljs-literal">-</span><span class="hljs-comment">blob</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">rdsk</span> <span class="hljs-comment">ramdisk</span><span class="hljs-string">.</span><span class="hljs-comment">im4p</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">rkrn</span> <span class="hljs-comment">krnl</span><span class="hljs-string">.</span><span class="hljs-comment">im4p</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">latest</span><span class="hljs-literal">-</span><span class="hljs-comment">sep</span> <span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">latest</span><span class="hljs-literal">-</span><span class="hljs-comment">baseband</span> <span class="hljs-comment">ipsw</span><span class="hljs-string">.</span><span class="hljs-comment">ipsw</span>
-            </code></pre><p>Boot portion:</p>
+            <pre><code>    futurerestore -t shsh.shsh2 --use-pwndfu --skip-blob --rdsk ramdisk.im4p --rkrn krnl.im4p --latest-sep --latest-baseband ipsw.ipsw
+            </code></pre>
+            <p>Boot portion:</p>
             <ol>
             <li><p>Prepare your ibss, ibec, devicetree, rootfs_trustcache and kernelcache.</p>
             </li>
             <li><p>Prepare your iv keys for ibss and ibec.</p>
             </li>
             <li><p>decrypt ibss and ibec:</p>
+            <pre><code> img4 -i ibss -o ibss.dmg -k ibss_ivkey
+             img4 -i ibec -o ibec.dmg -k ibec_ivkey
+            </code></pre>
+            </li>
+            <li><p>Patch them:</p>
+            <pre><code> iBoot64Patcher ibss.dmg ibss.patched
+             iBoot64Patcher ibec.dmg ibec.patched -b &quot;-v&quot;
+            </code></pre>
+            </li>
+            <li><p>Repack them with your IM4M (you can get it by doing this: img4tool -e -s yourshsh.shsh2 -m IM4M)</p>
+            <pre><code> img4 -i ibss.patched -o ibss.img4 -M IM4M -A -T ibss
+             img4 -i ibec.patched -o ibec.img4 -M IM4M -A -T ibec
+            </code></pre>
+            </li>
+            <li><p>Sign your devicetree and rootfs_trustcache: (and also the firmware files in the ipsw)</p>
+            <pre><code> img4 -i devicetree -o devicetree.img4 -M IM4M -T rdtr
+             img4 -i rootfs_trustcache -o rootfs_trustcache.img4 -M IM4M -T rtsc
+            </code></pre>
+            </li>
+            <li><p>Extract the kernelcache:</p>
+            <pre><code> pyimg4 im4p extract -i kernelcache -o kcache.raw --extra kpp.bin
+            </code></pre>
             </li>
             </ol>
-            <pre><code>    img4 -<span class="hljs-selector-tag">i</span> ibss -o ibss<span class="hljs-selector-class">.dmg</span> -k ibss_ivkey
-                img4 -<span class="hljs-selector-tag">i</span> ibec -o ibec<span class="hljs-selector-class">.dmg</span> -k ibec_ivkey
-            </code></pre><ol>
-            <li>Patch them:</li>
+            <p>(leave out --extra kpp.bin if you dont have kpp)</p>
+            <ol start="8">
+            <li>Patch it</li>
             </ol>
-            <pre><code>    iBoot64Patcher ibss<span class="hljs-selector-class">.dmg</span> ibss<span class="hljs-selector-class">.patched</span>
-                iBoot64Patcher ibec<span class="hljs-selector-class">.dmg</span> ibec<span class="hljs-selector-class">.patched</span> -<span class="hljs-selector-tag">b</span> <span class="hljs-string">"-v"</span>
-            </code></pre><ol>
-            <li>Repack them with your IM4M (you can get it by doing this: img4tool -e -s yourshsh.shsh2 -m IM4M)</li>
-            </ol>
-            <pre><code>    img4 -<span class="hljs-selector-tag">i</span> ibss<span class="hljs-selector-class">.patched</span> -o ibss<span class="hljs-selector-class">.img4</span> -M IM4M -A -T ibss
-                img4 -<span class="hljs-selector-tag">i</span> ibec<span class="hljs-selector-class">.patched</span> -o ibec<span class="hljs-selector-class">.img4</span> -M IM4M -A -T ibec
-            </code></pre><ol>
-            <li>Sign your devicetree and rootfs_trustcache: (and also the firmware files in the ipsw)</li>
-            </ol>
-            <pre><code>    img4 -<span class="hljs-selector-tag">i</span> devicetree -o devicetree<span class="hljs-selector-class">.img4</span> -M IM4M -T rdtr
-                img4 -<span class="hljs-selector-tag">i</span> rootfs_trustcache -o rootfs_trustcache<span class="hljs-selector-class">.img4</span> -M IM4M -T rtsc
-            </code></pre><ol>
-            <li>Extract the kernelcache:</li>
-            </ol>
-            <pre><code>    pyimg4 im4p extract -<span class="hljs-selector-tag">i</span> kernelcache -o kcache<span class="hljs-selector-class">.raw</span> --extra kpp<span class="hljs-selector-class">.bin</span> 
-            </code></pre><p>(leave out --extra kpp.bin if you dont have kpp)</p>
-            <ol>
-            <li>Patch it </li>
-            <li>the reason we don&#39;t use amfi patches is because jailbreak doesnt work anymore if you use amfi patches. </li>
-            <li>Make sure to DO amfi patches when restoring tho. </li>
-            </ol>
-            <pre><code>    Kernel64Patcher kcache<span class="hljs-selector-class">.raw</span> krnlboot<span class="hljs-selector-class">.patched</span> -f
-            </code></pre><ol>
-            <li>Repack it:</li>
-            </ol>
-            <pre><code>    pyimg4 im4p create -<span class="hljs-selector-tag">i</span> krnlboot<span class="hljs-selector-class">.patched</span> -o krnlboot<span class="hljs-selector-class">.im4p</span> --extra kpp<span class="hljs-selector-class">.bin</span> -f rkrn --lzss
-                pyimg4 img4 create -<span class="hljs-selector-tag">p</span> krnlboot<span class="hljs-selector-class">.im4p</span> -o krnlboot<span class="hljs-selector-class">.img4</span> -m IM4M
-            </code></pre><ol>
-            <li>Boot: 
-            <strong>(MAKE SURE YOU USE IPWNDFU TO ACTIVATE, IF YOU USE GASTER YOU CANNOT ACTIVATE THE DEVICE!)</strong></li>
-            </ol>
-            <pre><code>    irecovery <span class="hljs-_">-f</span> iBSS.img4
-                irecovery <span class="hljs-_">-f</span> iBEC.img4
-            </code></pre><h2 id="if-you-have-a10-or-higher-use-this-">If you have a10 or higher use this:</h2>
-            <h2 id="irecovery-c-go">irecovery -c go</h2>
-            <pre><code>irecovery <span class="hljs-_">-f</span> devicetree.img4
-            irecovery -c devicetree
-            <span class="hljs-comment"># if you have firmware add them here like this:</span>
-            <span class="hljs-comment"># MAKE SURE TO SIGN THEM!</span>
-            <span class="hljs-comment"># irecovery -f yourfirmware.img4</span>
-            <span class="hljs-comment"># irecovery -c firmware</span>
-            irecovery <span class="hljs-_">-f</span> aop.img4
-            irecovery -c firmware
-            irecovery <span class="hljs-_">-f</span> rootfs_trustcache.img4
-            irecovery -c firmware
-            irecovery <span class="hljs-_">-f</span> krnlboot.img4
-            irecovery -c bootx
+            <ul>
+            <li><p>the reason we don&#39;t use amfi patches is because jailbreak doesnt work anymore if you use amfi patches. </p>
+            </li>
+            <li><p>Make sure to DO amfi patches when restoring tho. </p>
+            <pre><code>  Kernel64Patcher kcache.raw krnlboot.patched -f
             </code></pre>
+            </li>
+            </ul>
+            <ol start="9">
+            <li><p>Repack it:</p>
+            <pre><code> pyimg4 im4p create -i krnlboot.patched -o krnlboot.im4p --extra kpp.bin -f rkrn --lzss
+             pyimg4 img4 create -p krnlboot.im4p -o krnlboot.img4 -m IM4M
+            </code></pre>
+            </li>
+            <li><p>Boot:</p>
+            </li>
+            </ol>
+            <p><strong>(MAKE SURE YOU USE IPWNDFU TO ACTIVATE, IF YOU USE GASTER YOU CANNOT ACTIVATE THE DEVICE!)</strong></p>
+            <pre><code>    irecovery -f iBSS.img4
+                irecovery -f iBEC.img4
+            </code></pre>
+            <h2 id="if-you-have-a10-or-higher-use-this">If you have a10 or higher use this:</h2>
+            <h2 id="irecovery--c-go">irecovery -c go</h2>
+            <pre><code>irecovery -f devicetree.img4
+            irecovery -c devicetree
+            # if you have firmware add them here like this:
+            # MAKE SURE TO SIGN THEM!
+            # irecovery -f yourfirmware.img4
+            # irecovery -c firmware
+            irecovery -f aop.img4
+            irecovery -c firmware
+            irecovery -f rootfs_trustcache.img4
+            irecovery -c firmware
+            irecovery -f krnlboot.img4
+            irecovery -c bootx
+            </code></pre>            
     </div>
     </div>
 
