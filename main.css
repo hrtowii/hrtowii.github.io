@@ -36,13 +36,13 @@ h3 {
     font-size: 2.25rem;
 }
 
-elements {
+a {
     color: var(--link);
     text-decoration: underline;
     font-style: normal;
 }
 
-elements:hover {
+a:hover {
     color: var(--linkhover);
     font-style: italic;
 }
@@ -62,7 +62,7 @@ elements:hover {
     width: 100%;
 }
 
-#navbar elements {
+#navbar a {
     float: left;
     display: block;
     color: var(--foreground);
@@ -72,17 +72,17 @@ elements:hover {
     font-size: 1.5rem;
 }
 
-#navbar elements:hover {
+#navbar a:hover {
     background-color: var(--navhover);
     color: var(--background);
 }
 
-#navbar elements.active {
+#navbar a.active {
     background-color: var(--navsel);
     color: var(--background);
 }
 
-#navbar elements.active:hover {
+#navbar a.active:hover {
     background-color: var(--navhover);
     color: var(--background);
 }
@@ -91,11 +91,11 @@ elements:hover {
     display: none;
 }
 
-#navbar .navsocial elements {
+#navbar .navsocial a {
     float: right;
 }
 
-#navbar .navsocial :not(elements) {
+#navbar .navsocial :not(a) {
     padding-right: 10px;
     padding-left: 10px;
 }
