@@ -96,7 +96,7 @@ a:hover {
 }
 
 #navbar .navsocial :not(a) {
-    padding-right: 12px;
+    padding-right: 0px;
 }
 
 /* extra stuff */
