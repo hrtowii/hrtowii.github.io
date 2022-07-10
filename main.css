@@ -72,7 +72,7 @@ a:hover {
 
 #navbar a.active {
   background-color: var(--navsel);
-  color: var(--foreground);
+  color: var(--background);
 }
 
 #navbar a.active:hover {
