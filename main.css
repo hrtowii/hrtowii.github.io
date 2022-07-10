@@ -91,11 +91,11 @@ a:hover {
     display: none;
 }
 
-#navbar .navsocial a {
+#navbar .navsocial elements {
     float: right;
 }
 
-#navbar .navsocial :not(a) {
+#navbar .navsocial :not(elements) {
     padding-right: 10px;
     padding-left: 10px;
 }
