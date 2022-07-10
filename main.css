@@ -92,3 +92,87 @@ a:hover {
   padding-right: 10px;
   padding-left: 10px;
 }
+
+/* extra stuff */
+.content {
+    padding-left: 20vw;
+    padding-right: 20vw;
+}
+
+#navbar.sticky + .centered {
+    padding-top: 56px;
+}
+
+#navbar.sticky + .content {
+    padding-top: 56px;
+}
+
+#navbar.dropped.sticky + .centered {
+    padding-top: calc(6rem+112px-1px);
+}
+
+.centered {
+    text-align: center;
+}
+
+@media only screen and (max-width:1280px) {
+  /* For tablets: */
+.main {
+    width: 80%;
+    padding: 0;
+}
+.right {
+    width: 100%;
+}
+.desktoponly {
+    display: none;
+}
+#navbar .icon {
+    float: right;
+    display: block;
+}
+#navbar .navsocial :not(a){
+    padding-right: 0px;
+}
+#navbar a:not(.active):not(.icon) {
+    display: none;
+}
+#navbar .navsocial a {
+    display: none;
+}
+    
+#navbar.dropped {
+
+#navbar.dropped .icon {
+    position: relative;
+    right: 0;
+    top: 0;
+}
+#navbar.dropped a:not(.icon):not(.navsocial) {
+    width: 100%;
+    float: none;
+    display: block;
+    text-align: left;
+}
+#navbar.dropped a.navsocial {
+    display: inline-block;
+    float: right;
+  }
+}
+ 
+@media only screen and (max-width:720px) {
+  /* For mobile phones: */
+.content {
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+.desktoponly {
+    display: none;
+}
+.nomobile {
+    display: none;
+}
+.date {
+    font-size: 1rem;
+}
+}
