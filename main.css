@@ -49,54 +49,40 @@ a:hover {
 
 /*  Navbar  */
 
-#navbar {
-      width: 100vw;
-      overflow: hidden;
-      background-color: var(--navbar);
-      z-index: 2000;
-}
-
-.sticky {
-      position: fixed;
-      top: 0;
-      width: 100%;
-}
-
-/* Style the links inside the navigation bar */
 #navbar a {
-    float: left;
-    display: block;
-    color: var(--foreground);
-    text-align: center;
-    padding: 14px 16px 14px 16px;
-    text-decoration: none;
-    font-size: 1.5rem;
+  float: left;
+  display: block;
+  color: var(--foreground);
+  text-align: center;
+  padding: 14px 16px 14px 16px;
+  text-decoration: none;
+  font-size: 1.5rem;
 }
 
-#navbar li a {
-    display: block;
-    color: rgb(255, 255, 255);
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-/* on hover */
 #navbar a:hover {
-    background-color: var(--navhover);
-    color: var(--background);
+  background-color: var(--navhover);
+  color: var(--background);
 }
 
 #navbar a.active {
-    background-color: var(--navsel);
-    color: var(--foreground);
+  background-color: var(--navsel);
+  color: var(--foreground);
 }
 
 #navbar a.active:hover {
-    background-color: var(--navhover);
-    color: var(--background);
+  background-color: var(--navhover);
+  color: var(--background);
 }
 
 #navbar .icon {
-    display: none;
+  display: none;
+}
+
+#navbar .navsocial a {
+  float: right;
+}
+
+#navbar .navsocial :not(a) {
+  padding-right: 10px;
+  padding-left: 10px;
 }
