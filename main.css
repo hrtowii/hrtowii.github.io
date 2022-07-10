@@ -6,7 +6,7 @@
     --date:       #f4b8e4;
     --navbar:     #303446;
     --navsel:     #ca9ee6;
-    --navhover:   #f4b8e4;
+    --navhover:   #DBA5CD;
     --link:       #83a598;
     --linkhover:  #458588;
 }
@@ -78,12 +78,12 @@ elements:hover {
 }
 
 #navbar elements.active {
-    background-color: var(--link);
-    color: var(--foreground);
+    background-color: var(--navhover);
+    color: var(--background);
 }
 
 #navbar elements.active:hover {
-    background-color: var(--linkhover);
+    background-color: var(--navsel);
     color: var(--background);
 }
 
