@@ -106,16 +106,8 @@ a:hover {
     padding-right: 10vw;
 }
 
-#navbar.sticky + .centered {
-    padding-top: 56px;
-}
-
 #navbar.sticky + .content {
-    padding-top: 56px;
-}
-
-#navbar.dropped.sticky + .centered {
-    padding-top: calc(6rem+112px-1px);
+    padding-top: 60px;
 }
 
 .centered {
