@@ -54,7 +54,7 @@ a:hover {
   display: block;
   color: var(--foreground);
   text-align: center;
-  padding: 14px 16px 14px 16px;
+  padding: 1px 1px 1px 1px;
   text-decoration: none;
   font-size: 1.5rem;
 }
@@ -71,12 +71,12 @@ a:hover {
 }
 
 #navbar a.active {
-  background-color: var(--navsel);
-  color: var(--background);
+  background-color: var(--link);
+  color: var(--foreground);
 }
 
 #navbar a.active:hover {
-  background-color: var(--navhover);
+  background-color: var(--linkhover);
   color: var(--background);
 }
 
@@ -95,8 +95,8 @@ a:hover {
 
 /* extra stuff */
 .content {
-    padding-left: 20vw;
-    padding-right: 20vw;
+    padding-left: 10vw;
+    padding-right: 10vw;
 }
 
 #navbar.sticky + .centered {
@@ -140,9 +140,9 @@ a:hover {
 #navbar .navsocial a {
     display: none;
 }
-    
+   
 #navbar.dropped {
-
+    }
 #navbar.dropped .icon {
     position: relative;
     right: 0;
