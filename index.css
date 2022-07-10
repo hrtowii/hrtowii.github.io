@@ -17,7 +17,6 @@ body {
 }
 
 
-
 .flexbox {
 	display: flex;
 	justify-content: space-evenly;
@@ -35,7 +34,6 @@ body {
 	color: rgba(0,0,0,0);
 	background-color: rgba(0,0,0,0);
 }
-
 
 
 /*   Title   */
