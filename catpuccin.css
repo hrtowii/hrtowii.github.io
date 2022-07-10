@@ -1,7 +1,5 @@
 @import url("index.css");
 
-
-
 :root {
 	--bg:		#161320;
 	--fg:		#C9CBFF;
@@ -19,4 +17,7 @@
 body {
 	background-image: url("img/default.png"); 
 	background-position: center;
+	max-width: 100%;
+    height: auto;
+    width: auto\9; /* ie8 */
 }
