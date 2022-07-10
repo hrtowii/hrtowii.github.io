@@ -130,3 +130,46 @@ a:hover {
     }
   }
 
+@media only screen and (max-width:1280px) {
+  /* For tablets: */
+  .main {
+    width: 80%;
+    padding: 0;
+  }
+  .right {
+    width: 100%;
+  }
+  .desktoponly {
+    display: none;
+  }
+  #navbar .icon {
+    float: right;
+    display: block;
+  }
+  #navbar .navsocial :not(a){
+    padding-right: 0px;
+  }
+  #navbar a:not(.active):not(.icon) {
+    display: none;
+  }
+  #navbar .navsocial a {
+    display: none;
+  }
+  #navbar.dropped {
+  }
+  #navbar.dropped .icon {
+    position: relative;
+    right: 0;
+    top: 0;
+  }
+  #navbar.dropped a:not(.icon):not(.navsocial) {
+    width: 100%;
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  #navbar.dropped a.navsocial {
+    display: inline-block;
+    float: right;
+  }
+}
