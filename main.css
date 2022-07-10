@@ -11,6 +11,41 @@
     --linkhover:  #458588;
 }
 
+/* basic stuff */
+body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 1.5rem;
+     margin: 0px;
+    overflow-x: hidden;
+}
+
+h1 { 
+    text-align: center;
+    font-size: 3rem;
+}
+
+h2 {
+    text-align: center;
+    font-size: 1.755rem;
+}
+
+h3 {
+    padding-left: 60px;
+    font-size: 2.25rem;
+}
+
+a {
+    color: var(--link);
+    text-decoration: underline;
+    font-style: normal;
+}
+
+a:hover {
+    color: var(--linkhover);
+    font-style: italic;
+}
 
 /*  Navbar  */
 
