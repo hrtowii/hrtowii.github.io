@@ -78,12 +78,12 @@ elements:hover {
 }
 
 #navbar elements.active {
-    background-color: var(--navhover);
+    background-color: var(--navsel);
     color: var(--background);
 }
 
 #navbar elements.active:hover {
-    background-color: var(--navsel);
+    background-color: var(--navhover);
     color: var(--background);
 }
 
