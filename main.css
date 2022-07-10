@@ -1,0 +1,11 @@
+:root {
+  --background: #32302f;
+  --foreground: #ebdbb2;
+  --date:       #928374;
+  --navbar:     #504945;
+  --navsel:     #d79921;
+  --navhover:   #fabd2f;
+  --tablehover: #1d2021;
+  --link:       #83a598;
+  --linkhover:  #458588;
+}
