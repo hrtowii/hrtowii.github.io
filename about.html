@@ -203,20 +203,10 @@
 
     <script type="application/javascript">
         window.onscroll = function() {stickyNavbar()};
-        window.onresize = function() {reInitVars()};
-        window.onload   = function() {reInitVars(); titleSeq()};
+        window.onresize = function() {stickyNavbar()};
+        window.onload   = function() {stickyNavbar()};
         
-        var sticky;
-        var navbar = document.getElementById("navbar");
-        var title = document.getElementById("title");
-
-        function titleSeq() {
-            title.innerHTML = "Lucas";
-        }
-        
-        function reInitVars() {
-            sticky = window.innerHeight;
-        }
+        var sticky = navbar.offsetTop;
         
         function stickyNavbar() {
             if (window.pageYOffset >= sticky) {

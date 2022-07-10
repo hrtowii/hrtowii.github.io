@@ -32,26 +32,16 @@
              <li>Info about me as a person</li>
              <li>My portfolio and a list of other things I've done and that I'm proud of</l>
           </ul>
-    <h2>Enjoy your stay!</h2>
+    <p>Enjoy your stay!</p>
     </div>
     </div>
 
     <script type="application/javascript">
         window.onscroll = function() {stickyNavbar()};
-        window.onresize = function() {reInitVars()};
-        window.onload   = function() {reInitVars(); titleSeq()};
+        window.onresize = function() {stickyNavbar()};
+        window.onload   = function() {stickyNavbar()};
         
-        var sticky;
-        var navbar = document.getElementById("navbar");
-        var title = document.getElementById("title");
-
-        function titleSeq() {
-            title.innerHTML = "Lucas";
-        }
-        
-        function reInitVars() {
-            sticky = window.innerHeight;
-        }
+        var sticky = navbar.offsetTop;
         
         function stickyNavbar() {
             if (window.pageYOffset >= sticky) {
