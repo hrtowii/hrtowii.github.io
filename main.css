@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans:wght@300&display=swap');
 :root {
     --background: #232634;
@@ -18,7 +18,7 @@ body {
     font-size: 1.5rem;
     margin: 0px;
     overflow-x: hidden;
-    font-family: 'Fira Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 h1 { 
@@ -43,13 +43,13 @@ a {
     color: var(--link);
     text-decoration: underline;
     font-style: normal;
-    font-family: 'Fira Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 a:hover {
     color: var(--linkhover);
     font-style: italic;
-    font-family: 'Fira Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 /*  Navbar  */
@@ -59,14 +59,14 @@ a:hover {
     overflow: hidden;
     background-color: var(--navbar);
     z-index: 2;
-    font-family: 'Fira Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .sticky {
     position: fixed;
     top: 0;
     width: 100%;
-    font-family: 'Fira Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 #navbar a {
@@ -77,30 +77,30 @@ a:hover {
     padding: 14px 16px 14px 16px;
     text-decoration: none;
     font-size: 1.5rem;
-    font-family: 'Fira Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 #navbar a:hover {
     background-color: var(--navhover);
     color: var(--background);
-    font-family: 'Fira Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 #navbar a.active {
     background-color: var(--navsel);
     color: var(--background);
-    font-family: 'Fira Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 #navbar a.active:hover {
     background-color: var(--navhover);
     color: var(--background);
-    font-family: 'Fira Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 #navbar .icon {
     display: none;
-    font-family: 'Fira Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 #navbar .navsocial a {
