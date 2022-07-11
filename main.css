@@ -101,6 +101,7 @@ a:hover {
 
 /* extra stuff */
 .content {
+  display: flex;
     padding-left: 10vw;
     padding-right: 10vw;
 }
@@ -118,21 +119,18 @@ a:hover {
   width : 100%;
   display: flex;
   justify-content: flex-end;
-  display: inline-block;
 }
 
 .contentleft {
   width: 100%;
   display: flex;
   justify-content: flex-start;
-  display: inline-block;
 }
 
 .contentcenter {
   width: 100%;
   display: flex;
   justify-content: center;
-  display: inline-block;
 }
 @media only screen and (max-width:720px) {
     /* For mobile phones: */
