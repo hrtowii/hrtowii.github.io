@@ -129,7 +129,7 @@ a:hover {
   display: flex;
   flex-direction: row;
   position: relative;
-  top: 0px;
+  gap: 20px;
 }
 
 .contentright {
