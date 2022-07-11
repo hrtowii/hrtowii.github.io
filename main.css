@@ -166,7 +166,7 @@ a:hover {
       font-size: 1rem;
     }
     .contentflexbox {
-      flex-direction: column;
+      flex-direction: block;
     }
     .contentright,
     .contentleft,
