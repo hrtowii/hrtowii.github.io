@@ -15,36 +15,41 @@
 body {
     background-color: var(--background);
     color: var(--foreground);
-    font-family: 'Roboto Mono', sans-serif;
     font-size: 1.5rem;
     margin: 0px;
     overflow-x: hidden;
+    font-family: 'Volte', sans-serif;
 }
 
 h1 { 
     text-align: center;
     font-size: 3rem;
+    font-family: 'Roboto Mono', sans-serif;
 }
 
 h2 {
     text-align: center;
     font-size: 2.25rem;
+    font-family: 'Roboto Mono', sans-serif;
 }
 
 h3 {
     text-align: center;
     font-size: 1.755rem;
+    font-family: 'Roboto Mono', sans-serif;
 }
 
 a {
     color: var(--link);
     text-decoration: underline;
     font-style: normal;
+    font-family: 'Roboto Mono', sans-serif;
 }
 
 a:hover {
     color: var(--linkhover);
     font-style: italic;
+    font-family: 'Roboto Mono', sans-serif;
 }
 
 /*  Navbar  */
@@ -54,12 +59,14 @@ a:hover {
     overflow: hidden;
     background-color: var(--navbar);
     z-index: 2;
+    font-family: 'Roboto Mono', sans-serif;
 }
 
 .sticky {
     position: fixed;
     top: 0;
     width: 100%;
+    font-family: 'Roboto Mono', sans-serif;
 }
 
 #navbar a {
@@ -70,25 +77,30 @@ a:hover {
     padding: 14px 16px 14px 16px;
     text-decoration: none;
     font-size: 1.5rem;
+    font-family: 'Roboto Mono', sans-serif;
 }
 
 #navbar a:hover {
     background-color: var(--navhover);
     color: var(--background);
+    font-family: 'Roboto Mono', sans-serif;
 }
 
 #navbar a.active {
     background-color: var(--navsel);
     color: var(--background);
+    font-family: 'Roboto Mono', sans-serif;
 }
 
 #navbar a.active:hover {
     background-color: var(--navhover);
     color: var(--background);
+    font-family: 'Roboto Mono', sans-serif;
 }
 
 #navbar .icon {
     display: none;
+    font-family: 'Roboto Mono', sans-serif;
 }
 
 #navbar .navsocial a {
