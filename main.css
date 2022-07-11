@@ -114,13 +114,23 @@ a:hover {
 }
 
 /* content alignment */
-.contentframe {
+.contentright {
   width : 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.contentleft {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.contentcenter {
+  width: 100%;
   display: flex;
   justify-content: center;
 }
-
-
 @media only screen and (max-width:720px) {
     /* For mobile phones: */
     .content {
