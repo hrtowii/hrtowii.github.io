@@ -115,13 +115,13 @@ a:hover {
 
 /* content alignment */
 .contentright {
-  width : 100%;
+  width : 50%;
   display: flex;
   justify-content: flex-end;
 }
 
 .contentleft {
-  width: 100%;
+  width: 50%;
   display: flex;
   justify-content: flex-start;
 }
