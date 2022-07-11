@@ -22,22 +22,21 @@ body {
 }
 
 h1 { 
-    text-align: center;
+    text-align: left;
     font-size: 3rem;
     font-family: 'Fira Sans', sans-serif;
 }
 
 h2 {
-    text-align: center;
+    text-align: left;
     font-size: 2.25rem;
     font-family: 'Fira Sans', sans-serif;
 }
 
 h3 {
-    text-align: center;
+    text-align: left;
     font-size: 1.755rem;
     font-family: 'Fira Sans', sans-serif;
-    padding: 10%;
 }
 
 a {
@@ -161,7 +160,7 @@ a:hover {
     .content {
       padding-left: 10vw;
       padding-right: 10vw;
-      font-size: 0.9rem;
+      font-size: 1.2rem;
     }
     .desktoponly {
       display: none;
