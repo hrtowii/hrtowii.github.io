@@ -113,6 +113,20 @@ a:hover {
     text-align: center;
 }
 
+.left-iframe {
+  position: absolute;
+    left: -370px;
+    width: 1280px;
+    height: 1200px;
+}
+
+.right-iframe {
+  position: absolute;
+    right: -370px;
+    width: 1280px;
+    height: 1200px;
+}
+
 @media only screen and (max-width:720px) {
     /* For mobile phones: */
     .content {
@@ -170,6 +184,5 @@ a:hover {
   }
   #navbar.dropped a.navsocial {
     display: inline-block;
-    float: right;
   }
 }
