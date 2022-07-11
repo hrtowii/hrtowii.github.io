@@ -113,15 +113,13 @@ a:hover {
     text-align: center;
 }
 
-.left-iframe {
-  position: absolute;
-    left: -370px;
+/* content alignment */
+.contentframe {
+  width : 100%;
+  display: flex;
+  justify-content: center;
 }
 
-.right-iframe {
-  position: absolute;
-    right: -370px;
-}
 
 @media only screen and (max-width:720px) {
     /* For mobile phones: */
