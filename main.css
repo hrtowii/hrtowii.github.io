@@ -129,19 +129,19 @@ a:hover {
   display: flex;
   flex-direction: row;
   position: relative;
-  gap: 20px;
+  margin-top: 40px;
 }
 
 .contentright {
   width : 100%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 .contentleft {
   width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 .contentcenter {
