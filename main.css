@@ -129,7 +129,7 @@ a:hover {
 }
 
 /* content alignment */
-.contentflexboxleft {
+.contentflexboxleft { /* picture on left */
   display: flex;
   flex-direction: row;
   position: relative;
@@ -142,16 +142,10 @@ a:hover {
   position: relative;
   margin-top: 40px;
 }
+.contentleft,
 .contentright {
-  width : 100%;
+  width: 30vw;
   max-width: 540px;
-  height: auto;
-  display: flex;
-  justify-content: space-around;
-}
-
-.contentleft {
-  width: 100%;
   height: auto;
   display: flex;
   justify-content: space-around;
@@ -188,7 +182,7 @@ a:hover {
     .contentright,
     .contentleft,
     .contentcenter {
-      width: auto;
+      width: 100vw;
     }
   }
 
