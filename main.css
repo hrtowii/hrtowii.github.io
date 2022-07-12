@@ -143,7 +143,7 @@ a:hover {
   position: relative;
   margin-top: 40px;
 }
-.contentleft,
+/* .contentleft,
 .contentright {
   width: 50vw;
   max-width: 540px;
@@ -157,7 +157,8 @@ a:hover {
   height: auto;
   display: flex;
   justify-content: center;
-}
+}  */
+
 @media only screen and (max-width:767px) {
     /* For mobile phones: */
     .content {
