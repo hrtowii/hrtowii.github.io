@@ -148,6 +148,7 @@ a:hover {
   width: 30vw;
   max-width: 540px;
   height: auto;
+  max-height: 20vw;
   display: flex;
   justify-content: space-around;
 }
