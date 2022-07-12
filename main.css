@@ -139,13 +139,15 @@ a:hover {
   margin-top: 40px;
 }
 .contentright {
-  width : 100%;
+  width: 55vw;
+  min-width: 330px;
   display: flex;
   justify-content: space-around;
 }
 
 .contentleft {
-  width: 100%;
+  width: 55vw; 
+  min-width: 330px;
   display: flex;
   justify-content: space-around;
 }
