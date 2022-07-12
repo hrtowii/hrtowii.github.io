@@ -116,6 +116,10 @@ a:hover {
     padding-right: 10vw;
 }
 
+.content > br {
+  width: 100%;
+  content: '';
+}
 #navbar.sticky + .content {
     padding-top: 60px;
 }
