@@ -143,7 +143,7 @@ a:hover {
   position: relative;
   margin-top: 40px;
 }
-/* .contentleft,
+.contentleft,
 .contentright {
   width: 50vw;
   max-width: 540px;
@@ -153,11 +153,11 @@ a:hover {
 }
 
 .contentcenter {
-  width: 80vw;
+  width: 50vw;
   height: auto;
   display: flex;
   justify-content: center;
-}  */
+}
 
 @media only screen and (max-width:767px) {
     /* For mobile phones: */
@@ -183,11 +183,14 @@ a:hover {
       flex-direction: column;
     }
     .contentright,
-    .contentleft,
-    .contentcenter {
+    .contentleft {
       width: 80vw;
       width: 100%;
       max-width: 360px;
+      height: auto;
+    }
+    .contentcenter {
+      width: 50vw;
       height: auto;
     }
   }
