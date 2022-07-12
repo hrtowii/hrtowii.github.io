@@ -132,7 +132,7 @@ a:hover {
   margin-top: 40px;
 }
 
-.contentflexboxright {
+.contentflexboxright { /* means that the picture IS on the right */
   display: flex;
   flex-direction: row;
   position: relative;
