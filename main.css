@@ -154,6 +154,7 @@ a:hover {
 
 .contentcenter {
   width: 50vw;
+  max-width: 540px;
   height: auto;
   display: flex;
   justify-content: center;
