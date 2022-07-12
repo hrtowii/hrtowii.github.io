@@ -185,6 +185,8 @@ a:hover {
     .contentleft,
     .contentcenter {
       width: 80vw;
+      max-width: 360px;
+      height: auto;
     }
   }
 
