@@ -144,18 +144,22 @@ a:hover {
 }
 .contentright {
   width : 100%;
+  max-width: 540px;
+  height: auto;
   display: flex;
   justify-content: space-around;
 }
 
 .contentleft {
   width: 100%;
+  height: auto;
   display: flex;
   justify-content: space-around;
 }
 
 .contentcenter {
   width: 100%;
+  height: auto;
   display: flex;
   justify-content: center;
 }
