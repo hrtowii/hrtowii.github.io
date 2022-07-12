@@ -124,11 +124,6 @@ a:hover {
     text-align: center;
 }
 
-.img {
-  width: 55vw; 
-  min-width: 330px;
-}
-
 /* content alignment */
 .contentflexboxleft {
   display: flex;
