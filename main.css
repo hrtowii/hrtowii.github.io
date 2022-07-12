@@ -145,7 +145,7 @@ a:hover {
 }
 .contentleft,
 .contentright {
-  width: 20vw;
+  width: 50vw;
   max-width: 540px;
   height: auto;
   max-height: 20vw;
