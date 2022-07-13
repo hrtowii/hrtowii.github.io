@@ -154,6 +154,9 @@ a:hover {
   align-items: center;
 }
 
+.img {
+  object-fit: contain;
+}
 @media only screen and (max-width:767px) {
     /* For mobile phones: */
     .content {
