@@ -159,7 +159,7 @@ img {
   object-fit: scale-down;
 }
 
-hr {
+hr.style {
   border-top: 1px dashed var(--foreground);
 }
 
