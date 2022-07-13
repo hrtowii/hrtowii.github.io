@@ -159,6 +159,10 @@ img {
   object-fit: scale-down;
 }
 
+hr {
+  border-top: 1px dashed var(--foreground);
+}
+
 @media only screen and (max-width:767px) {
     /* For mobile phones: */
     .content {
