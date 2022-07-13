@@ -156,9 +156,7 @@ a:hover {
   width: 50vw;
   max-width: 540px;
   height: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: inline-block;
 }
 
 @media only screen and (max-width:767px) {
