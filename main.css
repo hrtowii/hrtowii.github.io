@@ -156,6 +156,7 @@ a:hover {
 
 .img {
   max-width: unset;
+  /**/
   object-fit: scale-down;
 }
 
