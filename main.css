@@ -144,20 +144,13 @@ a:hover {
   margin-top: 40px;
 }
 .contentleft,
+.contentcenter,
 .contentright {
   width: 50vw;
   max-width: 540px;
   height: auto;
   display: flex;
   justify-content: space-around;
-}
-
-.contentcenter {
-  display: inline-block;
-  width: 50vw;
-  max-width: 540px;
-  height: auto;
-  margin-left: auto;
 }
 
 @media only screen and (max-width:767px) {
