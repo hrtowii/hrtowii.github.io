@@ -153,10 +153,11 @@ a:hover {
 }
 
 .contentcenter {
+  display: inline-block;
   width: 50vw;
   max-width: 540px;
   height: auto;
-  display: inline-block;
+  margin-left: auto;
 }
 
 @media only screen and (max-width:767px) {
