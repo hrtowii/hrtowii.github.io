@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Inconsolata:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans:wght@300&display=swap');
+
 :root {
     --background: #232634;
     --foreground: #c6d0f5;
@@ -134,14 +135,12 @@ a:hover {
   display: flex;
   flex-direction: row;
   position: relative;
-  margin-top: 40px;
 }
 
 .contentflexboxright { /* means that the picture IS on the right */
   display: flex;
   flex-direction: row;
   position: relative;
-  margin-top: 40px;
 }
 .contentleft,
 .contentcenter,
@@ -185,6 +184,7 @@ a:hover {
     }
     .contentcenter {
       width: 50vw;
+      max-width: 400px;
       height: auto;
     }
   }
