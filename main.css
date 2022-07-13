@@ -148,6 +148,7 @@ a:hover {
   width: 50vw;
   max-width: 540px;
   height: auto;
+  object-fit: contain;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -182,11 +183,13 @@ a:hover {
       width: 100%;
       max-width: 360px;
       height: auto;
+      object-fit: contain;
     }
     .contentcenter {
       width: 50vw;
       max-width: 400px;
       height: auto;
+      object-fit: contain;
     }
   }
 
