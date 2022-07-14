@@ -132,7 +132,7 @@ hr.style {
 .content {
     padding-left: 10vw;
     padding-right: 10vw;
-    row-gap: 10%;
+    column-gap: 10%;
 }
 
 .content > br {
@@ -152,14 +152,12 @@ hr.style {
   display: flex;
   flex-direction: row;
   position: relative;
-  margin-right: 25px;
 }
 
 .contentflexboxright { /* means that the picture IS on the right */
   display: flex;
   flex-direction: row;
   position: relative;
-  margin-right: -25px;
 }
 
 .contentleft,
