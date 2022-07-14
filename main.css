@@ -155,6 +155,7 @@ a:hover {
   flex-direction: row;
   position: relative;
 }
+
 .contentleft,
 .contentcenter,
 .contentright {
@@ -172,6 +173,7 @@ video {
   max-height: 100%;
   max-width: 100%;
   object-fit: scale-down;
+  padding-left: 15px;
 }
 
 hr.style {
