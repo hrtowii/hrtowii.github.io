@@ -2,14 +2,27 @@
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans:wght@300&display=swap');
 
 :root {
-    --background: #232634;
-    --foreground: #c6d0f5;
-    --date:       #f4b8e4;
-    --navbar:     #303446;
-    --navsel:     #ca9ee6;
-    --navhover:   #DBA5CD;
-    --link:       #83a598;
-    --linkhover:  #458588;
+    --darkbackground: #232634;
+    --darkforeground: #c6d0f5;
+    --darkdate:       #f4b8e4;
+    --darknavbar:     #303446;
+    --darknavsel:     #ca9ee6;
+    --darknavhover:   #DBA5CD;
+    --darklink:       #83a598;
+    --darklinkhover:  #458588;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: #dce0e8;
+    --foreground: #4c4f69;
+    --date: #ea76cb;
+    --navbar: #e6e9ef;
+    --navsel: #dd7878;
+    --navhover: #dc8a78;
+    --link: #179299;
+    --linkhover: #40a02b;
+  }
 }
 
 /* basic stuff */
