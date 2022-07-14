@@ -141,10 +141,6 @@ hr.style {
     padding-right: 10vw;
 }
 
-.content > br {
-  width: 100%;
-  content: '';
-}
 #navbar.sticky + .content {
     padding-top: 60px;
 }
@@ -167,7 +163,6 @@ hr.style {
 }
 
 .contentleft,
-.contentcenter,
 .contentright {
   width: 50vw;
   max-width: 540px;
