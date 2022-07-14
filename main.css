@@ -173,7 +173,7 @@ video {
   max-height: 100%;
   max-width: 100%;
   object-fit: scale-down;
-  padding-left: 15px;
+  padding-left: 15%;
 }
 
 hr.style {
@@ -217,7 +217,7 @@ hr.style {
     }
   }
 
-@media only screen and (max-width:1280px) {
+@media only screen and (max-width:1024px) {
   /* For tablets: */
   .main {
     width: 80%;
