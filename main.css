@@ -164,7 +164,7 @@ hr.style {
 .contentleft,
 .contentcenter,
 .contentright {
-  width: 40vw;
+  width: 50vw;
   max-width: 540px;
   height: auto;
   display: flex;
