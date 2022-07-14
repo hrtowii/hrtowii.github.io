@@ -152,14 +152,14 @@ hr.style {
   display: flex;
   flex-direction: row;
   position: relative;
-  margin-right: 5px;
+  margin-right: 25px;
 }
 
 .contentflexboxright { /* means that the picture IS on the right */
   display: flex;
   flex-direction: row;
   position: relative;
-  margin-right: -5px;
+  margin-right: -25px;
 }
 
 .contentleft,
