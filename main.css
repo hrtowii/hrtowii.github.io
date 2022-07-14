@@ -132,7 +132,7 @@ hr.style {
 .content {
     padding-left: 10vw;
     padding-right: 10vw;
-    row-gap: 10px;
+    row-gap: 10%;
 }
 
 .content > br {
