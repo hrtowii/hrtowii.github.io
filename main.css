@@ -132,7 +132,6 @@ hr.style {
 .content {
     padding-left: 10vw;
     padding-right: 10vw;
-    column-gap: 10%;
 }
 
 .content > br {
@@ -169,6 +168,7 @@ hr.style {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  column-gap: 10%;
 }
 
 img,
