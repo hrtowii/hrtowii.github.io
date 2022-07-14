@@ -55,6 +55,11 @@ h3 {
     font-family: 'Fira Sans', sans-serif;
 }
 
+p {
+  word-wrap: break-word;
+  width: 100%;
+}
+
 a {
     color: var(--link);
     text-decoration: underline;
