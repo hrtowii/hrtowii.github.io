@@ -37,9 +37,6 @@ body {
     font-family: 'Inconsolata', sans-serif;
 }
 
-p {
-    padding-right: 20px;
-}
 h1 { 
     text-align: left;
     font-size: 3rem;
@@ -135,8 +132,8 @@ hr.style {
 
 /* extra stuff */
 .content {
-    padding-left: 5vw;
-    padding-right: 5vw;
+    padding-left: 10vw;
+    padding-right: 10vw;
 }
 
 .content > br {
@@ -167,7 +164,7 @@ hr.style {
 .contentleft,
 .contentcenter,
 .contentright {
-  width: 50vw;
+  width: 40vw;
   max-width: 540px;
   height: auto;
   display: flex;
