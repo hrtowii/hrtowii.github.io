@@ -19,7 +19,7 @@ body {
 
 .flexbox {
 	display: flex;
-	justify-content: space-evenly;
+	justify-content: center;
 	align-items: center;
 }
 
