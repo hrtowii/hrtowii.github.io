@@ -222,6 +222,43 @@ html {
     }
   }
 
+  /*  Blog  */
+
+#blogposts {
+  border: 2px solid var(--foreground);
+}
+
+.blogpost { 
+  position: relative;
+  width: calc(100% - 16px);
+  height: 2.5rem;
+  padding: 8px;
+  color: var(--navhover);
+}
+
+.blogpost:nth-child(even) {
+  background-color: var(--navbar);
+}
+
+.blogpost:hover {
+  background-color: var(--tablehover);
+}
+
+.blogpost a {
+  color: var(--navhover);
+}
+
+.blogpost a:hover {
+  color: var(--navsel);
+}
+
+.date {
+  color: var(--date);
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+}
+
 @media only screen and (max-width:1024px) {
   /* For tablets: */
   .main {
