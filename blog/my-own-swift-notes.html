@@ -1,3 +1,54 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <title>LL's site</title>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='main.css'>
+    <link rel="icon" href="/img/oneshotsun.ico">
+    <script src="https://kit.fontawesome.com/e23a98c840.js" crossorigin="anonymous"></script>
+  </head>
+ 
+<body>
+  <script type="application/javascript">
+    window.onscroll = function() {stickyNavbar()};
+    window.onresize = function() {stickyNavbar()};
+    window.onload   = function() {stickyNavbar()};
+    
+    var sticky = navbar.offsetTop;
+    
+    function stickyNavbar() {
+        if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky")
+        } else {
+            navbar.classList.remove("sticky");
+        }
+       
+    }
+
+    function navExpand() {
+        if (navbar.classList.contains("dropped")) {
+            navbar.classList.remove("dropped")
+        } else {
+            navbar.classList.add("dropped");
+        }
+    } 
+  </script>
+  <div id="navbar">
+          <a href="javascript:void(0);" class="icon" onclick="navExpand()"><i class="fa fa-bars"></i></a>
+          <a href="index">Main Page</elements>
+          <a href="about">About Me</elements>
+          <a href="achievements.html">Achievements</elements>
+          <a class="active" href="javascript:void(0)">Blog</elements>
+      <span class="navsocial">
+          <a class="navsocial" href="https://instagram.com/htrowii"><i class="fab fa-instagram"></i></a>
+          <a class="navsocial" href="https://github.com/hrtowii"><i class="fab fa-github"></i></a>
+      </span>
+  </div>
+
+
+
+
 <h2>Swift is a strongly typed language.</h2>
 <ul>
 <li>Wtf does this mean?<ul>
@@ -325,3 +376,5 @@ Copy code
 struct Person { var name: Stringmutating funcchangeName(newName: String) { name = newName } }</p>
 <p>```</p>
 <p>In Swift, mutating functions are useful for modifying the state of an object in place, without the need to create a new object. However, they can also cause confusion and make code harder to reason about, so they should be used with care.</p>
+</body>
+</html>
