@@ -6,15 +6,23 @@ postTitle = input("Enter the title of the post: ")
 fileTitle = postTitle.lower().replace(" ","-")
 fileTitle = re.sub("[^a-z\-]", "", fileTitle)
 try:
+    print(selectedFile)
     with open(selectedFile,'r') as readfile:
         tempMd = readfile.read()
+        
     html = markdown.markdown(tempMd)
-    with open('blog/' + fileTitle + '.html', 'w') as f:
+    blogHTML = open('blog/' + fileTitle + '.html', 'w')
+    template = open("template.txt", "r")
+    with blogHTML as f:
+        f.write(template.read())
+        template.close()
         f.write(html)
-except:
-    print("File not found")
+        f.write("<div class=\"content\">")
+    
+except Exception as e:
+    print(e)
 
-# very cool code i stole from someone else   
+# very cool code i stole from someone else
 curdate = datetime.datetime.now()
 day = str(int(curdate.strftime("%d"))) + "."
 nicedate = day + curdate.strftime(" %B %Y")
