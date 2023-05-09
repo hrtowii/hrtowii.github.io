@@ -13,12 +13,3 @@
 	--magenta:	#DDB6F2;
 	--cyan:		#89DCEB;
 }
-
-body {
-	background-image: url("img/default.png"); 
-	height: 100%;
-  	/* Center and scale the image nicely */
-  	background-position: center;
-  	background-repeat: no-repeat;
-  	background-size: cover;
-}
