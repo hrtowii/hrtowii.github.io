@@ -7,86 +7,86 @@
 		<link rel='stylesheet' href='catpuccin.css'>
 		<link rel="icon" href="img/oneshotsun.ico">
 	</head>                              
-                                       
-	<body class='flexbox' onload="startTime()">
-		<div class="mainbox">
-			<h1 class='title'>hello, <span class='hl'>htrowii</span>.</h1>
-			<table>
-				<tr>
-					<td>
-						<div style='margin-bottom: 32px;'>
-							<h1 id='clock' style='margin: 0px;'></h1>
-							<!-- <h2 id='cal' ></h1> -->
-						</div>
-						<div class='art'>
-							<img src="img/oneshotsun.png" alt="The Sun." width="125" height="125">
-						</div>
-					</td>
-					<td>
-						<nav class='flexbox' style='flex-direction: column;'>
-							<div class='flexbox' style='flex-direction: row; align-items: flex-start; justify-content: space-evenly;'>
-								<div>
-									<b>~/media</b>
-									<ul>
-										<li><a href='https://www.youtube.com/'>/youtube</a></li>
-										<li><a href='https://scp-wiki.wikidot.com/'>/scp</a></li>
-										<li><a href='https://www.instagram.com/'>/insta</a></li>
-									</ul>
-								</div>
-								<div>
-									<b>~/resources</b>
-									<ul>
-										<li><a href='https://chat.openai.com'>/chatgpt</a></li>
-										<li><a href='https://stackoverflow.com/'>/stack-overflow</a></li>
-										<li><a href='https://doc.rust-lang.org/book/'>/rust-book</a></li>
-									</ul>
-								</div>
+                            
+		<body onload="startTime()">
+			<div class="mainbox">
+				<h1 class='title'>hello, <span class='hl'>htrowii</span>.</h1>
+				<table>
+					<tr>
+						<td>
+							<div style='margin-bottom: 32px;'>
+								<h1 id='clock' style='margin: 0px;'></h1>
+								<!-- <h2 id='cal' ></h1> -->
 							</div>
-							<div class='flexbox' style='flex-direction: row; align-items: flex-start; justify-content: space-evenly; width:100%;'>
-								<div>
-									<b>~/school</b>
-									<ul>
-										<li><a href='https://mynypportal.nyp.edu.sg//'>/nyp-portal</a></li>
-										<li><a href='https://outlook.office365.com/mail/'>/outlook</a></li>
-										<li><a href='https://nyplms.polite.edu.sg/'>/politemall</a></li>
-									</ul>
-								</div>
-								<div>
-									<b>~/misc</b>
-									<ul>
-										<li><a href='https://www.onedrive.live.com/'>/onedrive</a></li>
-										<li><a href='https://wikipedia.org/'>/wiki</a></li>
-										<li><a href='https://notion.so/'>/notion</a></li>
-									</ul>
-								</div>
+							<div class='art'>
+								<img src="img/oneshotsun.png" alt="The Sun." width="125" height="125">
 							</div>
-						</nav>
-					</td>
-				</tr>
-				<tr>
-					<td colspan='2'>
-						<div class='flexbox search'>	
-							<form onsubmit="return searchGoogle()" style='width: 80%;'>
-								<input type="text" placeholder="Type..." id='search_box'>
-								<button type="submit"><i></i></button>
-							</form>
-						</div>
-						<!-- <div class='flexbox' style='padding: 10px;'>
-							<div class='colcir' style='background-color:var(--black);  '></div>
-							<div class='colcir' style='background-color:var(--red);    '></div>
-							<div class='colcir' style='background-color:var(--green);  '></div>
-							<div class='colcir' style='background-color:var(--yellow); '></div>
-							<div class='colcir' style='background-color:var(--blue);   '></div>
-							<div class='colcir' style='background-color:var(--magenta);'></div>
-							<div class='colcir' style='background-color:var(--cyan);   '></div>
-							<div class='colcir' style='background-color:var(--fg);     '></div>
-						</div>
-<-->
-					</td>
-				</tr>
-			</table>
-		</div>
-			
+						</td>
+						<td>
+							<nav class='flexbox' style='flex-direction: column;'>
+								<div class='flexbox' style='flex-direction: row; align-items: flex-start; justify-content: space-evenly;'>
+									<div>
+										<b>~/media</b>
+										<ul>
+											<li><a href='https://www.youtube.com/'>/youtube</a></li>
+											<li><a href='https://scp-wiki.wikidot.com/'>/scp</a></li>
+											<li><a href='https://www.instagram.com/'>/insta</a></li>
+										</ul>
+									</div>
+									<div>
+										<b>~/resources</b>
+										<ul>
+											<li><a href='https://chat.openai.com'>/chatgpt</a></li>
+											<li><a href='https://stackoverflow.com/'>/stack-overflow</a></li>
+											<li><a href='https://doc.rust-lang.org/book/'>/rust-book</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class='flexbox' style='flex-direction: row; align-items: flex-start; justify-content: space-evenly; width:100%;'>
+									<div>
+										<b>~/school</b>
+										<ul>
+											<li><a href='https://mynypportal.nyp.edu.sg//'>/nyp-portal</a></li>
+											<li><a href='https://outlook.office365.com/mail/'>/outlook</a></li>
+											<li><a href='https://nyplms.polite.edu.sg/'>/politemall</a></li>
+										</ul>
+									</div>
+									<div>
+										<b>~/misc</b>
+										<ul>
+											<li><a href='https://www.onedrive.live.com/'>/onedrive</a></li>
+											<li><a href='https://wikipedia.org/'>/wiki</a></li>
+											<li><a href='https://notion.so/'>/notion</a></li>
+										</ul>
+									</div>
+								</div>
+							</nav>
+						</td>
+					</tr>
+					<tr>
+						<td colspan='2'>
+							<div class='flexbox search'>	
+								<form onsubmit="return searchGoogle()" style='width: 80%;'>
+									<input type="text" placeholder="Type..." id='search_box'>
+									<button type="submit"><i></i></button>
+								</form>
+							</div>
+							<!-- <div class='flexbox' style='padding: 10px;'>
+								<div class='colcir' style='background-color:var(--black);  '></div>
+								<div class='colcir' style='background-color:var(--red);    '></div>
+								<div class='colcir' style='background-color:var(--green);  '></div>
+								<div class='colcir' style='background-color:var(--yellow); '></div>
+								<div class='colcir' style='background-color:var(--blue);   '></div>
+								<div class='colcir' style='background-color:var(--magenta);'></div>
+								<div class='colcir' style='background-color:var(--cyan);   '></div>
+								<div class='colcir' style='background-color:var(--fg);     '></div>
+							</div>
+	<-->
+						</td>
+					</tr>
+				</table>
+			</div>
+			</body>
 		<script>
 			function startTime() {
 			  const today = new Date();
