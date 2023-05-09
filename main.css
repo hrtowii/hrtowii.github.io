@@ -226,6 +226,7 @@ html {
 
 #blogposts {
   border: 2px solid var(--foreground);
+  margin: 10px;
 }
 
 .blogpost { 
