@@ -12,7 +12,7 @@ try:
         
     html = markdown.markdown(tempMd)
     blogHTML = open('blog/' + fileTitle + '.html', 'w')
-    template = open("template.txt", "r")
+    template = open("blog/template.txt", "r")
     with blogHTML as f:
         f.write(template.read())
         template.close()
