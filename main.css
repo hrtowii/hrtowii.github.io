@@ -243,6 +243,7 @@ video {
   max-height: 100%;
   max-width: 100%;
   object-fit: scale-down;
+  z-index: 1;
 }
 
 /* animations */
@@ -528,6 +529,7 @@ html {
   .navbaricon.fa-bars {
     font-size: 3rem;
     color: var(--foreground);
+    z-index: 9999999;
   }
 
   .contentflexboxleft {
