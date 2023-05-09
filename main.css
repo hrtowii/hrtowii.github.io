@@ -87,7 +87,7 @@ hr.style {
     font-family: 'Inconsolata', sans-serif;
 }
 
-.sticky {
+.sticky { /* class for sticky, js applies it when scrolling/resizing and on load */
     position: fixed;
     top: 0;
     width: 100%;
