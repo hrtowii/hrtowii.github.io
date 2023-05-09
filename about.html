@@ -10,15 +10,18 @@
   </head>
  
 <body>
-    <div id="navbar">
-          <a href="javascript:void(0);" class="icon" onclick="navExpand()"><i class="fa fa-bars"></i></a>
-          <a href="index.html">Main Page</a>
-          <a class="active" href="javascript:void(0)">About Me</a>
-          <a href="achievements.html">Achievements</a>
-          <a href="blog.html">Blog</a>
+    <div id="navbarbutton">
+        <a href="javascript:void(0);" class="navbaricon" onclick="navExpand()"><i class="sticky fa fa-bars"></i></a>
+    </div>
+    <div id="navbar" class="hidden">
+            <a href="javascript:void(0);" class="icon" onclick="navExpand()"><i class="fa fa-bars"></i></a>
+            <a href="index.html">Main Page</a>
+            <a href="about.html">About Me</a>
+            <a class="active" href="javascript:void(0)">Achievements</a>
+            <a href="blog.html">Blog</a>
         <span class="navsocial">
-          <a class="navsocial" href="https://instagram.com/htrowii"><i class="fab fa-instagram"></i></a>
-          <a class="navsocial" href="https://github.com/hrtowii"><i class="fab fa-github"></i></a>
+            <a href="https://instagram.com/htrowii"><i class="fab fa-instagram"></i></a>
+            <a href="https://github.com/hrtowii"><i class="fab fa-github"></i></a>
         </span>
     </div>
     
@@ -63,10 +66,15 @@
         }
 
         function navExpand() {
-            if (navbar.classList.contains("dropped")) {
-                navbar.classList.remove("dropped")
+            if (navbar.classList.contains("bounceInLeft")) {
+                navbar.classList.add("bounceOutLeft");
+                navbar.classList.remove("bounceInLeft")
+                sleep(1) // sorry for this travesty
+                navbar.classList.add("hidden");
             } else {
-                navbar.classList.add("dropped");
+                navbar.classList.add("bounceInLeft");
+                navbar.classList.remove("bounceOutLeft")
+                navbar.classList.remove("hidden");
             }
         } 
     </script>
