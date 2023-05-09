@@ -1,5 +1,4 @@
 import markdown
-import datetime
 import re
 selectedFile = input("Enter the exact path of the markdown file you would like to convert: ")
 postTitle = input("Enter the title of the post: ")
@@ -24,10 +23,3 @@ try:
     
 except Exception as e:
     print(e)
-
-# very cool code i stole from someone else
-curdate = datetime.datetime.now()
-day = str(int(curdate.strftime("%d"))) + "."
-nicedate = day + curdate.strftime(" %B %Y")
-
-print('Date: ' + nicedate)
