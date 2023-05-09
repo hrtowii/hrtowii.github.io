@@ -10,42 +10,16 @@
   </head>
  
 <body>
-  <script type="application/javascript">
-    window.onscroll = function() {stickyNavbar()};
-    window.onresize = function() {stickyNavbar()};
-    window.onload   = function() {stickyNavbar()};
-
-    var sticky = navbar.offsetTop;
-
-    function stickyNavbar() {
-        if (window.pageYOffset >= sticky) {
-            navbar.classList.add("sticky")
-        } else {
-            navbar.classList.remove("sticky");
-        }
-
-    }
-
-    function navExpand() {
-        if (navbar.classList.contains("dropped")) {
-            navbar.classList.remove("dropped")
-        } else {
-            navbar.classList.add("dropped");
-        }
-    } 
-  </script>
   <div id="navbar">
           <a href="javascript:void(0);" class="icon" onclick="navExpand()"><i class="fa fa-bars"></i></a>
-          <a href="../index">Main Page</a>
-          <a href="../about">About Me</a>
-          <a href="../achievements">Achievements</a>
+          <a href="../index.html">Main Page</a>
+          <a href="../about.html">About Me</a>
+          <a href="../achievements.html">Achievements</a>
           <a class="active" href="javascript:void(0)">Blog</a>
       <span class="navsocial">
           <a class="navsocial" href="https://instagram.com/htrowii%22%3E<i class="fab fa-instagram"></i></a>
           <a class="navsocial" href="https://github.com/hrtowii%22%3E<i class="fab fa-github"></i></a>
       </span>
   </div>
-
-
 
 <div class="content">

@@ -1,66 +1,69 @@
 <!DOCTYPE html>
 <html lang='en'>
-  <head>
-    <title>LL's site</title>
-    <meta charset='utf-8'>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel='stylesheet' href='main.css'>
-    <link rel="icon" href="/img/oneshotsun.ico">
-    <script src="https://kit.fontawesome.com/e23a98c840.js" crossorigin="anonymous"></script>
-  </head>
+	<head>
+		<title>LL's site</title>
+		<meta charset='utf-8'>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel='stylesheet' href='main.css'>
+		<link rel="icon" href="/img/oneshotsun.ico">
+		<script src="https://kit.fontawesome.com/e23a98c840.js" crossorigin="anonymous"></script>
+	</head>
  
 <body>
-  <script type="application/javascript">
-    window.onscroll = function() {stickyNavbar()};
-    window.onresize = function() {stickyNavbar()};
-    window.onload   = function() {stickyNavbar()};
-    
-    var sticky = navbar.offsetTop;
-    
-    function stickyNavbar() {
-        if (window.pageYOffset >= sticky) {
-            navbar.classList.add("sticky")
-        } else {
-            navbar.classList.remove("sticky");
-        }
-       
-    }
+	<div id="navbar">
+					<a href="javascript:void(0);" class="icon" onclick="navExpand()"><i class="fa fa-bars"></i></a>
+					<a href="index.html">Main Page</a>
+					<a href="about.html">About Me</a>
+					<a href="achievements.html">Achievements</a>
+					<a class="active" href="javascript:void(0)">Blog</a>
+			<span class="navsocial">
+					<a class="navsocial" href="https://instagram.com/htrowii"><i class="fab fa-instagram"></i></a>
+					<a class="navsocial" href="https://github.com/hrtowii"><i class="fab fa-github"></i></a>
+			</span>
+	</div>
 
-    function navExpand() {
-        if (navbar.classList.contains("dropped")) {
-            navbar.classList.remove("dropped")
-        } else {
-            navbar.classList.add("dropped");
-        }
-    } 
-  </script>
-  <div id="navbar">
-          <a href="javascript:void(0);" class="icon" onclick="navExpand()"><i class="fa fa-bars"></i></a>
-          <a href="index">Main Page</a>
-          <a href="about">About Me</a>
-          <a href="achievements.html">Achievements</a>
-          <a class="active" href="javascript:void(0)">Blog</a>
-      <span class="navsocial">
-          <a class="navsocial" href="https://instagram.com/htrowii"><i class="fab fa-instagram"></i></a>
-          <a class="navsocial" href="https://github.com/hrtowii"><i class="fab fa-github"></i></a>
-      </span>
-  </div>
-  <div id="content">
-    <h1>Blog</h1>
-    <h2>random things</h2>
-    <div id="blogposts">
-      <div class="blogpost">
-        <a href="blog/my-own-swift-notes.html">My own Swift notes</a><br>
-        <span class="date">21st December 2022</span>
-      </div>
-      <div class="blogpost">
-        <a href="blog/triple-boot.html">Installing triple boot on my laptop</a><br>
-        <span class="date">9th May 2023</span>
-      </div>
-		  </div>
-    </div>
-  </div>
+	<div class="content">
+		<h1>Blog</h1>
+		<h2>random things</h2>
+		<h1> piss</h1>
+		<div class="blogpostbox">
+			<div class="blogpost">
+				<a href="blog/my-own-swift-notes.html">My own Swift notes</a><br>
+				<span class="date">21st December 2022</span>
+			</div>
+		</div>
+		<div class="blogpostbox">
+			<div class="blogpost">
+				<a href="blog/triple-boot.html">Installing triple boot on my laptop</a><br>
+				<span class="date">9th May 2023</span>
+			</div>
+		</div>
+	</div>
 </body>
+<script type="application/javascript">
+	window.onscroll = function() {stickyNavbar()};
+	window.onresize = function() {stickyNavbar()};
+	window.onload   = function() {stickyNavbar()};
+	
+	var sticky = navbar.offsetTop;
+	
+	function stickyNavbar() {
+			if (window.pageYOffset >= sticky) {
+					navbar.classList.add("sticky")
+			} else {
+					navbar.classList.remove("sticky");
+			}
+		 
+	}
+
+	function navExpand() {
+			if (navbar.classList.contains("dropped")) {
+					navbar.classList.remove("dropped")
+			} else {
+					navbar.classList.add("dropped");
+			}
+	} 
+</script>
 </html>
 
 
