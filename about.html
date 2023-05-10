@@ -48,35 +48,6 @@
             <br>
             <p>So, what would I want to achieve with my Information Technology diploma? Besides knowing more about coding, I want to be able to make people&#39;s lives more convenient through coding. Life now is all interconnected through the internet; banking is done online, movies can be streamed online, and even dating can be done online. I hope that by joining this course, I&#39;m able to make a positive impact on the world by developing useful tools for people to use.</p>
     </div>
-
-    <script type="application/javascript">
-        window.onscroll = function() {stickyNavbar()};
-        window.onresize = function() {stickyNavbar()};
-        window.onload   = function() {stickyNavbar()};
-        
-        var sticky = navbar.offsetTop;
-        
-        function stickyNavbar() {
-            if (window.pageYOffset >= sticky) {
-                navbar.classList.add("sticky")
-            } else {
-                navbar.classList.remove("sticky");
-            }
-           
-        }
-
-        function navExpand() {
-            if (navbar.classList.contains("bounceInLeft")) {
-                navbar.classList.add("bounceOutLeft");
-                navbar.classList.remove("bounceInLeft")
-                sleep(1) // sorry for this travesty
-                navbar.classList.add("hidden");
-            } else {
-                navbar.classList.add("bounceInLeft");
-                navbar.classList.remove("bounceOutLeft")
-                navbar.classList.remove("hidden");
-            }
-        } 
-    </script>
 </body>
+<script type="text/javascript" src="navbar.js"></script>
 </html>
