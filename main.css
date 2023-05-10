@@ -90,7 +90,7 @@ hr.style {
 }
 
 .hidden {
-  display: none;
+  visibility: hidden;
 }
 
 .navbaricon .fa-bars {
@@ -143,6 +143,7 @@ span {
   display: block;
   text-align: center;
 }
+
 #navbar .navsocial a {
   display: inline-flex;
   text-align: center;
@@ -151,65 +152,56 @@ span {
 #navbar .navsocial :not(a) {
   padding-right: 0px;
 }
-/* horizontal navbar (old)
-/* #navbar {
-  width: 100vw;
-  overflow: hidden;
-  background-color: var(--navbar);
-  z-index: 2;
-  font-family: 'Inconsolata', sans-serif;
+
+/* extra stuff */
+.content {
+  padding-top: 20px;
+  padding-left: 10vw;
+  padding-right: 10vw;
 }
 
-#navbar a {
-  float: left;
-  display: block;
-  color: var(--foreground);
+.centered {
   text-align: center;
+}
+
+#indexlinks {
+  overflow: hidden;
+  background-color: #292c3c;
+  border-radius: 10px;
+  margin-left: 10vw;
+  margin-right: 40.8vw;
+}
+
+#indexlinks span {
+  display: inline-flex;
+}
+
+#indexlinks a {
+  display: inline-block;
+  color: var(--foreground);
+  text-align: left;
   padding: 14px 16px 14px 16px;
   text-decoration: none;
   font-size: 1.5rem;
   font-family: 'Inconsolata', sans-serif;
 }
 
-#navbar a:hover {
-  background-color: var(--navhover);
-  color: var(--background);
-  font-family: 'Inconsolata', sans-serif;
-}
-
-#navbar a.active {
+#indexlinks a.active {
   background-color: var(--navsel);
   color: var(--background);
   font-family: 'Inconsolata', sans-serif;
 }
 
-#navbar a.active:hover {
+#indexlinks a:hover {
   background-color: var(--navhover);
   color: var(--background);
   font-family: 'Inconsolata', sans-serif;
 }
 
-#navbar .icon {
-  display: none;
-}
-
-#navbar .navsocial a {
-  float: right;
-}
-
-#navbar .navsocial :not(a) {
-  padding-right: 0px;
-} */
-
-/* extra stuff */
-.content {
-  padding-top: 20px;
-  padding-left: 20vw;
-  padding-right: 10vw;
-}
-
-.centered {
-  text-align: center;
+#indexlinks a.active:hover {
+  background-color: var(--navhover);
+  color: var(--background);
+  font-family: 'Inconsolata', sans-serif;
 }
 
 /* content alignment */
@@ -249,6 +241,43 @@ video {
 /* animations */
 html {
   scroll-behavior: smooth;
+}
+
+p, h1, h2, h3, h4, ul, li, hr, img, video, iframe .blogpostbox, .blogpost {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
 }
 
 .bounceOutLeft {
@@ -376,50 +405,6 @@ html {
   }
 }
 
-/* Rotating the image */
-@-webkit-keyframes rotating
-
-/* Safari and Chrome */
-  {
-  from {
-    -webkit-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-
-  to {
-    -webkit-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes rotating {
-  from {
-    -ms-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -webkit-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-
-  to {
-    -ms-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-
-.rotating {
-  -webkit-animation: rotating 2s linear infinite;
-  -moz-animation: rotating 2s linear infinite;
-  -ms-animation: rotating 2s linear infinite;
-  -o-animation: rotating 2s linear infinite;
-  animation: rotating 1.5s linear infinite;
-}
-
 /*  Blog  */
 
 .blogpostbox {
@@ -506,6 +491,24 @@ html {
 }
 
 @media only screen and (max-width:1024px) {
+
+  #indexlinks {
+    overflow: hidden;
+    background-color: #292c3c;
+    border-radius: 10px;
+    margin-left: 10vw;
+    margin-right: 40.8vw;
+  }
+  
+  #indexlinks a {
+    display: block;
+    color: var(--foreground);
+    text-align: left;
+    padding: 14px 16px 14px 16px;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-family: 'Inconsolata', sans-serif;
+  }
 
   /* For tablets: */
   .main {
