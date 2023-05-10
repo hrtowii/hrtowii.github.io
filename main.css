@@ -4,6 +4,7 @@
 /* light mode */
 :root {
   --background: #dce0e8;
+  --background2: #e6e9ef;
   --foreground: #4c4f69;
   --date: #ea76cb;
   --navbar: #e6e9ef;
@@ -17,6 +18,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #232634;
+    --background2: #292c3c;
     --foreground: #c6d0f5;
     --date: #f4b8e4;
     --navbar: #303446;
@@ -85,7 +87,7 @@ hr.style {
   height: 100vh;
   overflow-y: auto;
   background-color: var(--navbar);
-  z-index: 2;
+  z-index: 9999;
   font-family: 'Inconsolata', sans-serif;
 }
 
@@ -93,11 +95,16 @@ hr.style {
   visibility: hidden;
 }
 
-.navbaricon .fa-bars {
-  padding-top: 4vh;
-  padding-left: 2.5vw;
-  font-size: 3rem;
+.sticky.fa.fa-bars {
+  padding: 0.8rem;
+  top: 4vh;
+  left: 4vw;
   color: var(--foreground);
+  overflow: hidden;
+  background: var(--background2);
+  border-radius: 50%;
+  font-size: 2.5rem;
+  z-index: 999;
 }
 
 .sticky {
@@ -166,7 +173,7 @@ span {
 
 #indexlinks {
   overflow: hidden;
-  background-color: #292c3c;
+  background-color: var(--background2);
   border-radius: 10px;
   margin-left: 10vw;
   margin-right: 40.8vw;
@@ -444,7 +451,25 @@ p, h1, h2, h3, h4, ul, li, hr, img, video, iframe .blogpostbox, .blogpost {
   right: 8px;
 }
 
+
+
 /* Responsiveness to phone screens */
+/* For really small mobile phones: */
+@media only screen and (max-width:568px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+  h2 {
+    font-size: 1.75rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+  .sticky.fa.fa-bars {
+    padding: 0rem;
+    font-size: 1rem;
+  }
+}
 @media only screen and (max-width:767px) {
 
   /* For mobile phones: */
@@ -454,7 +479,7 @@ p, h1, h2, h3, h4, ul, li, hr, img, video, iframe .blogpostbox, .blogpost {
     font-size: 1.3rem;
     column-gap: 10px;
   }
-
+  
   .desktoponly {
     display: none;
   }
@@ -488,13 +513,19 @@ p, h1, h2, h3, h4, ul, li, hr, img, video, iframe .blogpostbox, .blogpost {
     max-width: 400px;
     height: auto;
   }
+
+  .sticky.fa.fa-bars {
+    padding: 0rem;
+    font-size: 1rem;
+  }
+
 }
 
 @media only screen and (max-width:1024px) {
 
   #indexlinks {
     overflow: hidden;
-    background-color: #292c3c;
+    background-color: var(--background2);
     border-radius: 10px;
     margin-left: 10vw;
     margin-right: 40.8vw;
@@ -524,15 +555,9 @@ p, h1, h2, h3, h4, ul, li, hr, img, video, iframe .blogpostbox, .blogpost {
     display: none;
   }
 
-  #navbarbutton {
-    padding-top: 4vh;
-    padding-left: 4vw;
-  }
-
-  .navbaricon.fa-bars {
-    font-size: 3rem;
-    color: var(--foreground);
-    z-index: 9999999;
+  .sticky.fa.fa-bars {
+    padding: 0.8rem;
+    font-size: 2rem;
   }
 
   .contentflexboxleft {
