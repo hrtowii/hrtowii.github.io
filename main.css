@@ -85,7 +85,10 @@ hr.style {
   top: 0;
   left: 0;
   height: 100vh;
-  height: -webkit-fill-available;
+  min-height: 100vh;            /* fall-back */
+  min-height: -moz-available;
+  min-height: -webkit-fill-available;
+  min-height: fill-available;
   overflow-y: auto;
   background-color: var(--navbar);
   z-index: 9999;
