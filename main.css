@@ -79,16 +79,15 @@ hr.style {
   border-top: 1px solid var(--foreground);
 }
 
+html {
+  overflow-y: auto;
+}
 /*  Navbar  */
 #navbar {
   position: fixed;
   top: 0;
   left: 0;
-  height: 100vh;
-  min-height: 100vh;            /* fall-back */
-  min-height: -moz-available;
-  min-height: -webkit-fill-available;
-  min-height: fill-available;
+  min-height: 110vh; /* please work on iphone */
   overflow-y: auto;
   background-color: var(--navbar);
   z-index: 9999;
