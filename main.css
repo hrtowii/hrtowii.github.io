@@ -253,7 +253,7 @@ html {
   scroll-behavior: smooth;
 }
 
-p, h1, h2, h3, h4, ul, li, hr, img, video, iframe .blogpostbox, .blogpost {
+p, h1, h2, h3, h4, ul, li, hr, img, video, iframe, pre, code .blogpostbox, .blogpost {
   -webkit-animation-name: fadeInUp;
   animation-name: fadeInUp;
   -webkit-animation-duration: 0.5s;
@@ -418,15 +418,14 @@ p, h1, h2, h3, h4, ul, li, hr, img, video, iframe .blogpostbox, .blogpost {
 /*  Blog  */
 
 code { /* single line, similar to ` ` in discord */
-  border: 1px solid var(--foreground);
-  padding: 5px;
-  top: 5px;
+  position: relative;
 }
 
 pre { /* block of code similar to ```...``` in discord */
   display: block;
-  border: 1px solid var(--foreground);
-  padding: 5px;
+  border: 2px solid var(--foreground);
+  padding: 30px;
+  white-space: pre-wrap;
 }
 
 .blogpostbox {
@@ -479,10 +478,6 @@ pre { /* block of code similar to ```...``` in discord */
   }
   h3 {
     font-size: 1.5rem;
-  }
-  .sticky.fa.fa-bars {
-    padding: 0rem;
-    font-size: 1rem;
   }
 }
 @media only screen and (max-width:767px) {
@@ -590,5 +585,17 @@ pre { /* block of code similar to ```...``` in discord */
     width: 100%;
     max-width: 360px;
     height: auto;
+  }
+  code { /* single line, similar to ` ` in discord */
+    /* border: 1px solid var(--foreground);
+    padding: 5px; */
+    font-size: 0.8rem;
+  }
+  
+  pre { /* block of code similar to ```...``` in discord */
+    display: block;
+    border: 2px solid var(--foreground);
+    padding: 5px;
+    font-size: 0.8rem;
   }
 }

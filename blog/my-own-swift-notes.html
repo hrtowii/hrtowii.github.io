@@ -462,7 +462,7 @@ print(shape2.color) // blue</pre></p>
     <p>An instance of a <strong><code>struct</code></strong> is created using the struct's name and the initializer
       syntax, for example:</p>
     <p><pre>
-    let point = Point(x: 1.0, y: 2.0)</pre</p>
+let point = Point(x: 1.0, y: 2.0)</pre></p>
     <p>An instance of a <strong><code>class</code></strong> is created using the <strong><code>class</code></strong>
       keyword and the initializer syntax, for example:</p>
     <p><pre>
@@ -488,9 +488,7 @@ let shape = Shape(color: "red")</pre></p>
       </li>
     </ul>
     <p><pre>
-      Copy code
-      struct Person { var name: Stringmutating funcchangeName(newName: String) { name = newName } }</p>
-    <p><pre></p>
+struct Person { var name: Stringmutating funcchangeName(newName: String) { name = newName } }</pre></p>
     <p>In Swift, mutating functions are useful for modifying the state of an object in place, without the need to create
       a new object. However, they can also cause confusion and make code harder to reason about, so they should be used
       with care.</p>
