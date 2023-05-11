@@ -44,25 +44,25 @@
     <h2>Arrays &amp; Sets</h2>
     <h3>Arrays</h3>
     <p>An array stores an ordered collection of values of the same data type.</p>
-    <p><code>swift
+    <p><pre>
 var Array1 = [String]()
 var Array2: [String] = []
-// both create an empty array that contains strings</code></p>
+// both create an empty array that contains strings</pre></p>
     <p><strong>.count property</strong></p>
-    <p><code>swift
-var randomExample: [Double] = [1.1, 1.3, 1.42, 0.12]
-print(count.randomExample) // returns 4 Int</code></p>
+    <p><pre>
+var randomExample: [Double] = [1.1, 1.3, 1.42, 0.12]<br><br>
+print(count.randomExample) // returns 4 Int</pre></p>
     <p><strong>**<code>.append()</code> Method and <code>+=</code> Operator</strong></p>
     <ul>
       <li>The <code>.append()</code> method can be called on an array to add an item to the end of the array.</li>
       <li>The <code>+=</code> addition assignment operator can be used to add the elements of another array to the
         existing array.</li>
     </ul>
-    <p><code>swift
+    <p><pre>
 var gymBadges = ["Boulder", "Cascade"] 
 gymBadges.append("Thunder")
 gymBadges += ["Rainbow", "Soul"] 
-// ["Boulder", "Cascade", "Thunder", "Rainbow", "Soul"]</code></p>
+// ["Boulder", "Cascade", "Thunder", "Rainbow", "Soul"]</pre></p>
     <p><strong>**<code>.insert()</code> and <code>.remove()</code> Methods</strong></p>
     <ul>
       <li>The <code>.insert()</code> method can be called on an array to add an element at a specified index.<ul>
@@ -74,15 +74,15 @@ gymBadges += ["Rainbow", "Soul"]
         </ul>
       </li>
     </ul>
-    <p><code>var moon = ["🌖", "🌗", "🌘", "🌑"] 
+    <p><pre>var moon = ["🌖", "🌗", "🌘", "🌑"] 
 moon.insert("🌕", at: 0) // ["🌕", "🌖", "🌗", "🌘", "🌑"] 
-moon.remove(at: 4) // ["🌕", "🌖", "🌗", "🌘"]</code></p>
+moon.remove(at: 4) // ["🌕", "🌖", "🌗", "🌘"]</pre></p>
     <p><strong><em>*Iterating Over an Array</em></strong>*</p>
     <ul>
       <li>In Swift, a <code>for</code>-<code>in</code> loop can be used to iterate through the items of an array.</li>
       <li>This is a powerful tool for working with and manipulating a large amount of data.</li>
     </ul>
-    <p><code>swift
+    <p><pre>
 var employees = ["Michael", "Dwight", "Jim", "Pam", "Andy"] 
 for person in employees {  
     print(person)
@@ -91,45 +91,51 @@ for person in employees {  
 // Prints: Dwight
 // Prints: Jim
 // Prints: Pam
-// Prints: Andy</code></p>
+// Prints: Andy</pre></p>
     <p><strong><em>*Swift Sets</em></strong>*</p>
     <ul>
       <li>We can use a set to store unique elements of the same data type.</li>
     </ul>
-    <p><code>swift
-var paintings: Set /* IMPORTANT */ = ["The Dream", "The Starry Night", "The False Mirror"]</code></p>
+    <p><pre>
+var paintings: Set /* IMPORTANT */ = ["The Dream", "The Starry Night", "The False Mirror"]</pre></p>
     <p><strong><em>*Empty Sets</em></strong>*</p>
     <ul>
       <li>An empty set is a set that contains no values inside of it.</li>
     </ul>
-    <p><code>swift
+    <p><pre>
 var team = Set&lt;String&gt;() 
-print(team)// Prints: []</code></p>
+print(team)// Prints: []</pre></p>
     <p><strong><em>*Populated Sets</em></strong>*</p>
     <ul>
       <li>To create a set populated with values, use the <code>Set</code> keyword before the assignment operator.</li>
       <li>The values of the set must be contained within brackets <code>[]</code> and separated with
         commas <code>,</code>.</li>
     </ul>
-    <p><code>swift
-var vowels: Set = ["a", "e", "i", "o", "u"]</code></p>
+    <p><pre>
+var vowels: Set = ["a", "e", "i", "o", "u"]</pre></p>
     <p><strong><em>*.insert()</em></strong>*</p>
     <p>To insert a single value into a set, append <code>.insert()</code> to a set and place the new value inside the
       parentheses <code>()</code>.</p>
     <p>
-      <code>var cookieJar: Set = ["Chocolate Chip", "Oatmeal Raisin"] // Add a new elementcookieJar.insert("Peanut Butter Chip")</code>
+      <pre>var cookieJar: Set = ["Chocolate Chip", "Oatmeal Raisin"]
+// Add a new element
+cookieJar.insert("Peanut Butter Chip")</pre>
     </p>
     <p><strong><em>*.remove() and .removeAll() Methods</em></strong>*</p>
     <p>To remove a single value from a set, append <code>.remove()</code> to a set with the value to be removed placed
       inside the parentheses <code>()</code>.</p>
     <p>To remove every single value from a set at once, append <code>.removeAll()</code> to a set.</p>
     <p>
-      <code>var oddNumbers: Set = [1, 2, 3, 5] // Remove an existing elementoddNumbers.remove(2) // Remove all elementsoddNumbers.removeAll()</code>
+      <pre>var oddNumbers: Set = [1, 2, 3, 5] 
+// Remove an existing element
+oddNumbers.remove(2) 
+// Remove all elements
+oddNumbers.removeAll()</pre>
     </p>
     <p><strong><em>*.contains()</em></strong>*</p>
     <p>Appending <code>.contains()</code> to an existing set with an item in the parentheses <code>()</code> will return
       a <code>true</code> or <code>false</code> value that states whether the item exists within the set.</p>
-    <p><code>swift
+    <p><pre>
 var names: Set = ["Rosa", "Doug", "Waldo"] 
 print(names.contains("Lola")) // Prints: false 
 if names.contains("Waldo") {  
@@ -137,71 +143,93 @@ if names.contains("Waldo") {  
   } else {  
     print("Where's Waldo?")
 }
-// Prints: There's Waldo!</code></p>
+// Prints: There's Waldo!</pre></p>
     <p><strong><em>*Iterating Over a Set</em></strong>*</p>
     <p>A <code>for</code>-<code>in</code> loop can be used to iterate over each item in a set.</p>
-    <p><code>swift
+    <p><pre>
 var recipe: Set = ["Chocolate chips", "Eggs", "Flour", "Sugar"]
 for ingredient in recipe {
   print ("Include \\(ingredient) in the recipe.")
-}</code></p>
+}</pre></p>
     <p><strong><em>*.isEmpty Property</em></strong>*</p>
     <p>Use the built-in property <code>.isEmpty</code> to check if a set has no values contained in it.</p>
     <p>
-      <code>var emptySet = Set&lt;String&gt;() print(emptySet.isEmpty)  // Prints: true var populatedSet: Set = [1, 2, 3] print(populatedSet.isEmpty) // Prints: false</code>
+      <pre>var emptySet = Set&lt;String&gt;()
+print(emptySet.isEmpty)  
+// Prints: true 
+var populatedSet: Set = [1, 2, 3] 
+print(populatedSet.isEmpty) 
+// Prints: false</pre>
     </p>
     <p><strong><em>*.count Property</em></strong>*</p>
     <p>The property <code>.count</code> returns the number of elements contained within a set.</p>
     <p>
-      <code>var band: Set = ["Guitar", "Bass", "Drums", "Vocals"] print("There are \\(band.count) players in the band.")// Prints: There are 4 players in the band.</code>
+      <pre>var band: Set = ["Guitar", "Bass", "Drums", "Vocals"]
+print("There are \\(band.count) players in the band.")
+// Prints: There are 4 players in the band.</pre>
     </p>
     <p><strong><em>*.intersection() Operation</em></strong>*</p>
     <p>The <code>.intersection()</code> operation populates a new set of elements with the overlapping elements of two
       sets.</p>
     <p>a intersect b</p>
     <p>
-      <code>var setA: Set = ["A", "B", "C", "D"]var setB: Set = ["C", "D", "E", "F"] var setC = setA.intersection(setB)print(setC)  // Prints: ["D", "C"]</code>
+      <pre>var setA: Set = ["A", "B", "C", "D"]
+var setB: Set = ["C", "D", "E", "F"] 
+var setC = setA.intersection(setB)
+print(setC)  
+// Prints: ["D", "C"]</pre>
     </p>
     <p><strong><em>*.union() Operation</em></strong>*</p>
     <p>The <code>.union()</code> operation populates a new set by taking all the values from two sets and combining
       them.</p>
     <p>a U b</p>
     <p>
-      <code>var setA: Set = ["A", "B", "C", "D"]var setB: Set = ["C", "D", "E", "F"] var setC = setA.union(setB)print(setC) // Prints: ["B", "A", "D", "F", "C", "E"]</code>
+      <pre>var setA: Set = ["A", "B", "C", "D"]
+var setB: Set = ["C", "D", "E", "F"]
+var setC = setA.union(setB)print(setC) 
+// Prints: ["B", "A", "D", "F", "C", "E"]</pre>
     </p>
     <p><strong><em>*.symmetricDifference() Operation</em></strong>*</p>
     <p>The <code>.symmetricDifference()</code> operation creates a new set with all the non-overlapping values between
       two sets.</p>
     <p>a’ intersect b’</p>
     <p>
-      <code>var setA: Set = ["A", "B", "C", "D"]var setB: Set = ["C", "D", "E", "F"] var setC = setA.symmetricDifference(setB)print(setC) // Prints: ["B", "E", "F", "A"]</code>
+      <pre>var setA: Set = ["A", "B", "C", "D"]
+var setB: Set = ["C", "D", "E", "F"]
+var setC = setA.symmetricDifference(setB)
+print(setC) 
+// Prints: ["B", "E", "F", "A"]</pre>
     </p>
     <p><strong><em>*.subtracting() Operation</em></strong>*</p>
     <p>The <code>.subtracting()</code> operation removes the values of one second set from another set and stores the
       remaining values in a new set.</p>
     <p>a</p>
     <p>
-      <code>var setA: Set = ["A", "B", "C", "D"]var setB: Set = ["C", "D"] var setC = setA.subtracting(setB)print(setC) // Prints: ["B", "A"]</code>
+      <pre>var setA: Set = ["A", "B", "C", "D"]
+var setB: Set = ["C", "D"]
+var setC = setA.subtracting(setB)
+print(setC)
+// Prints: ["B", "A"]</pre>
     </p>
     <h2><strong>Functions</strong></h2>
     <ul>
       <li>A function definition consists of a function name followed by optional parameters and a return type. If no
         return type is declared, it will be Void. -&gt; Returns none. Only prints.</li>
     </ul>
-    <p><code>swift
+    <p><pre>
 func washCar() -&gt; Void {
   print("Soap")
   print("Scrub")
   print("Rinse")
   print("Dry")
-}</code></p>
+}</pre></p>
     <ul>
       <li>The function body holds the function’s task.</li>
       <li>A function will execute only when it is called.</li>
     </ul>
-    <p><code>swift
+    <p><pre>
 washCar()
-// Output: Soap \\n Scrub \\n Rinse \\n Dry</code></p>
+// Output: Soap \\n Scrub \\n Rinse \\n Dry</pre></p>
     <ul>
       <li>A <code>return</code> keyword is used to return a value from a function.</li>
     </ul>
@@ -222,13 +250,13 @@ washCar()
       <li>As many parameters as a function accepts, as many arguments or real values must be passed into the function
         when it is called.</li>
     </ul>
-    <p>```swift
-      func convertFracToDec(numerator: Double, denominator: Double) -&gt; Double {
-      return numerator / denominator
-      } </p>
-    <p>let decimal = convertFracToDec(numerator: 1.0, denominator: 2.0)
-      print(decimal) // Prints: 0.5
-      ```</p>
+    <p><pre>
+func convertFracToDec(numerator: Double, denominator: Double) -&gt; Double {
+  return numerator / denominator
+} </pre></p>
+    <p><pre>let decimal = convertFracToDec(numerator: 1.0, denominator: 2.0)
+print(decimal) // Prints: 0.5
+</pre></p>
     <ul>
       <li>A function can return multiple values in the form of a tuple.</li>
     </ul>
@@ -250,7 +278,7 @@ washCar()
       <li>Structures are a means of modeling real life objects programmatically.</li>
       <li>How to create a structure using <code>struct</code> ?</li>
     </ul>
-    <p><code>swift
+    <p><pre>
 struct Apple {
     var price = Double
     var sale = Bool
@@ -259,7 +287,7 @@ struct Apple {
         sale = self.sale
     func exampleMethod -&gt; String {
         print("Hello World")
-    }</code></p>
+    }</pre></p>
     <ul>
       <li>
         <p>To model individual objects, we can create instances of <code>structs</code> which may have unique property
@@ -298,10 +326,9 @@ struct Apple {
     <h3>Class Inheritance</h3>
     <p>To create a class that inherits from another, we put the name of the class we’re inheriting from (superclass)
       after the name of the class we’re creating (subclass), like so:</p>
-    <p>```
-      class Subclass: Superclass {</p>
-    <p>}
-      ```</p>
+    <p><pre>
+class Subclass: Superclass {}</pre>
+    </p></p>
     <p>The subclass will inherit the properties and functions and literally everything from the superclass. However,
       subclasses can have special properties that are more special that superclasses do not have.</p>
     <h3>Overriding Methods</h3>
@@ -314,45 +341,46 @@ struct Apple {
         </ul>
       </li>
     </ul>
-    <p>```
-      override func name(parameter) {</p>
-    <p>}
-      ```</p>
+    <p><pre>
+override func name(parameter) {
+
+}</pre></p>
     <ul>
       <li>A class is another means of modeling real-life objects programmatically.</li>
       <li>How to create a class using the <code>class</code> keyword.</li>
     </ul>
-    <p>```swift</p>
-    <p>// Using data types:
-      class Student {
-      var name: String
-      var year: Int
-      var gpa: Double
-      var honors: Bool
-      init(
-      }</p>
-    <p>// Using default property values:
-      class Student {
-      var name = ""
-      var year = 0
-      var gpa = 0.0
-      var honors = false
-      }
-      ```</p>
+    <p><pre>
+// Using data types:
+class Student {
+  var name: String
+  var year: Int
+  var gpa: Double
+  var honors: Bool
+  init()
+}</pre></p>
+    <p><pre>
+// Using default property values:
+class Student {
+  var name = ""
+  var year = 0
+  var gpa = 0.0
+  var honors = false
+}
+    </pre></p>
     <ul>
       <li>Using the <code>init()</code> method allows us to provide an instance with specific values right off-the-bat
         during the creation of an instance.</li>
     </ul>
-    <p>```swift
-      class Fruit {
-      var hasSeeds = true
-      var color: String</p>
-    <p>init(color: String) {
-      self.color = color
-      }
-      }</p>
-    <p>let apple = Fruit(color: "red")
-      ```</p>
+    <p><pre>
+class Fruit {
+  var hasSeeds = true
+  var color: String
+  init(color: String) {
+    self.color = color
+  }
+}
+let apple = Fruit(color: "red")
+</pre></p>
     <ul>
       <li>
         <p>A class can inherit another class’s properties and methods.</p>
@@ -389,13 +417,35 @@ struct Apple {
           <strong><code>object</code></strong> are used in Swift:</p>
       </li>
     </ul>
-    <p>```
-      struct Point { var x: Double vary: Double } class Shape { varcolor: String init(color: String)
-      { self.color = color }func draw() { print("Drawing a shape with color: \(color)") } }let point1 = Point(x: 1.0,
-      y: 2.0) let point2 = point1 point2.x = 3.0 print(point1.x) // 1.0 print(point2.x)  //
-      3.0let shape1 = Shape(color: "red")let shape2 = shape1 shape2.color = "blue" print(shape1.color)  //
-      blue print(shape2.color)  // blue</p>
-    <p>```</p>
+    <p><pre>
+struct Point {
+    var x: Double
+    var y: Double
+}
+
+class Shape {
+    var color: String
+    
+    init(color: String) {
+        self.color = color
+    }
+    
+    func draw() {
+        print("Drawing a shape with color: \(color)")
+    }
+}
+
+let point1 = Point(x: 1.0, y: 2.0)
+var point2 = point1
+point2.x = 3.0
+print(point1.x) // 1.0
+print(point2.x) // 3.0
+
+let shape1 = Shape(color: "red")
+var shape2 = shape1
+shape2.color = "blue"
+print(shape1.color) // red
+print(shape2.color) // blue</pre></p>
     <p>In this example, the <strong><code>Point</code></strong> struct is a value type that holds the coordinates of a
       point. The <strong><code>Shape</code></strong> class is a reference type that holds the color of a shape and has a
       <strong><code>draw</code></strong> method. When a <strong><code>Point</code></strong> instance is assigned to
@@ -411,14 +461,12 @@ struct Apple {
       <strong><code>class</code></strong> is a reference type, so the two are not interchangeable.</p>
     <p>An instance of a <strong><code>struct</code></strong> is created using the struct's name and the initializer
       syntax, for example:</p>
-    <p>```</p>
-    <p>let point = Point(x: 1.0, y: 2.0)</p>
-    <p>```</p>
+    <p><pre>
+    let point = Point(x: 1.0, y: 2.0)</pre</p>
     <p>An instance of a <strong><code>class</code></strong> is created using the <strong><code>class</code></strong>
       keyword and the initializer syntax, for example:</p>
-    <p>```</p>
-    <p>let shape = Shape(color: "red")</p>
-    <p>```</p>
+    <p><pre>
+let shape = Shape(color: "red")</pre></p>
     <p>In both cases, the resulting value is an instance of the specified type. However, the instance of a
       <strong><code>struct</code></strong> is a value type, while the instance of a <strong><code>class</code></strong>
       is a reference type. This means that the <strong><code>struct</code></strong> instance is a copy of the original
@@ -439,10 +487,10 @@ struct Apple {
           that can be used to change the value of the <strong><code>name</code></strong> property:</p>
       </li>
     </ul>
-    <p>```
+    <p><pre>
       Copy code
       struct Person { var name: Stringmutating funcchangeName(newName: String) { name = newName } }</p>
-    <p>```</p>
+    <p><pre></p>
     <p>In Swift, mutating functions are useful for modifying the state of an object in place, without the need to create
       a new object. However, they can also cause confusion and make code harder to reason about, so they should be used
       with care.</p>

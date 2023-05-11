@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>storyform</title>
+</head>
+<body>
+    <form method="get" action="FormProcessor2.html">
+    <fieldset>
+        <legend>Personal Particulars</legend>
+        Birth Date: <input name="bdate" type="text" placeholder="dd/mm/yyyy"></input><br>
+        Gender:<br>
+        Male <input name="gender" value="male" type="checkbox"></input><br>
+        Female <input name="gender" value="female" type="checkbox"></input><br>
+        Diploma in:<br>
+        <input type="text"></input><br>
+        Email Address: <input name="email" type="text" placeholder="dd/mm/yyyy"></input><br>
+        Contact Number: <input title="8 digits telephone number" name="contact" type="text" placeholder=""></input><br>
+    </fieldset>
+    <fieldset>
+        <legend>Preference</legend>
+        Most preferred age: <input value="17" min="1" max="120" name="age" type="text" placeholder=""></input> years old <br>
+        Favourite color: <input name="color" type="color"></input><br>
+        <label for="activity">Favorite activity:</label>
+        <input list="activity" name="activity" id="activity"><br>
+        <datalist id="activity">
+          <option value="Edge">
+          <option value="Swimming">
+          <option value="Running">
+          <option value="Crying">
+          <option value="Basketball">
+        </datalist> 
+        Diploma in:<br>
+        <input type="text"></input><br>
+        Favorite website: <input name="website" type="text" placeholder="https://www.google.com"></input><br>
+        Favorite Holiday Location: <input name="location" type="text" placeholder=""></input><br>
+    </fieldset>
+    <input type="submit"></input>
+    </form>
+</body>

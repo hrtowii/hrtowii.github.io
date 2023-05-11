@@ -417,6 +417,18 @@ p, h1, h2, h3, h4, ul, li, hr, img, video, iframe .blogpostbox, .blogpost {
 
 /*  Blog  */
 
+code { /* single line, similar to ` ` in discord */
+  border: 1px solid var(--foreground);
+  padding: 5px;
+  top: 5px;
+}
+
+pre { /* block of code similar to ```...``` in discord */
+  display: block;
+  border: 1px solid var(--foreground);
+  padding: 5px;
+}
+
 .blogpostbox {
   border: 2px solid var(--foreground);
   margin: 10px;
