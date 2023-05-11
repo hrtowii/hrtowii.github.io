@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <title>LL's site</title>
+  <meta charset='utf-8'>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:site_name" content="LL's website">
+  <meta property="og:url" content="https://hrtowii.github.io">
+  <meta property="og:title" content="Webwsite of htrowii">
+  <meta property="og:description" content="Sussy">
+  <meta property="og:type" content="website">
+  <meta name="og:image" itemprop="image" content="../img/oneshotsun.png">
+  <link rel='stylesheet' href='../main.css'>
+  <link rel="icon" href="../img/oneshotsun.ico">
+  <script src="https://kit.fontawesome.com/e23a98c840.js" crossorigin="anonymous"></script>
+  <style>
+    img {
+      max-height: 650px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="navbarbutton">
+    <a href="javascript:void(0);" class="navbaricon" onclick="navExpand()"><i class="sticky fa fa-bars"></i></a>
+  </div>
+  <div id="navbar" class="hidden">
+    <a href="javascript:void(0);" class="icon" onclick="navExpand()"><i class="fa fa-bars"></i></a>
+    <a href="../index.html">Main Page</a>
+    <a href="../about.html">About Me</a>
+    <a href="../achievements.html">Achievements</a>
+    <a class="active" href="javascript:void(0)">Blog</a>
+    <span class="navsocial">
+      <a href="https://instagram.com/htrowii"><i class="fab fa-instagram"></i></a>
+      <a href="https://github.com/hrtowii"><i class="fab fa-github"></i></a>
+    </span>
+  </div>
+
+  <div class="content">
+    <h1>Theming iOS Control Center modules on iOS 11 and above with CAML</h1>
+    <h2>Introduction</h2>
+    <p>In iOS 11, Apple totally revamped the Control Center to become more modular and clean. Ever since then, it was
+      thought that theming the icon modules were almost impossible, as they were written in a weird file format: CAML.
+      Workarounds for this through jailbreak tweaks were made by creating entirely separate icon modules that contained
+      just static pngs (flipswitch/flipconvert). This is fine, but the only exception to this are the sliders. It was
+      mostly thought to be impossible to theme those by the theming community until now.</p>
+    <h2>Wtf is CAML?</h2>
+    <p>Huge thanks to iOSCreatix for his medium post. Read this article if you want to understand more. His maize
+      repository on Github (<a
+        href="https://github.com/andrewwiik/Maize/tree/master/Modules">https://github.com/andrewwiik/Maize/tree/master/Modules</a>)
+      also contains many examples of CAML files that I used to understand it.</p>
+    <p>Essentially, CAML is a xml kind of file that describes how a particular CC module is drawn, and uses
+      CoreGraphics/CoreAnimation. Although the API for CAML is private, CoreAnimation documentation is public on Apple’s
+      website here: <a
+        href="https://developer.apple.com/documentation/quartzcore">https://developer.apple.com/documentation/quartzcore</a>
+    </p>
+    <h2>Using CAML to theme icons?</h2>
+    <p>Some icons use assets from the <a href="http://Assets.car"><code>Assets.car</code></a> in their directory, but
+      most animated icons use CAShapeLayers. The most interesting property of this is <code>path</code>, which is a
+      CGPath. CGPaths are something similar to SVGs, so they can be scaled up or down without losing quality. There are
+      two ways of theming this, one of which i’ve tried and failed: Replacing CAShapeLayer with a regular CALayer and
+      adding a normal PNG, or converting your image into a CGPath that can be drawn.</p>
+    <h2>Using normal images</h2>
+    <p><a
+        href="https://developer.apple.com/documentation/quartzcore/calayer/1410773-contents">https://developer.apple.com/documentation/quartzcore/calayer/1410773-contents</a>
+    </p>
+    <p>CALayer has a property <contents> that accepts an image and places it on the CC slider. It would have been
+        perfect for my use case until I tried it and… it looked horrible.</p>
+    <p>&#x200B;</p>
+    <div class="centered"><img src="../img/img5.webp"></img></div>
+    <p>This isn’t an issue if you’re using a solid 1square png or something. But most of the time you aren’t, which
+      brings me to the second method:</p>
+    <h2>Converting images to CGPaths</h2>
+    <p>If you look at the medium post from above, you may have seen something interesting in the CAShapeLayer:</p>
+    <img src="../img/img4.webp"></img>
+    <p>The <code>path</code> property draws an image on the layer using CGPath. Sounds similar to SVGs. How do you
+      convert a PNG to something that can be converted to CGPath? Well firstly, you’d need to convert it to a SVG image
+      first. Use <a href="https://photopea.com">https://photopea.com</a> to do so. Find an app (Paintcode) or (<a
+        href="http://svg-converter.kyome.io/">http://svg-converter.kyome.io/</a>) that converts SVG images into
+      UIBezierPaths for Apple. These have a property that prints the CGPath of the image:</p>
+    <div class="centered"><img src="../img/img3.webp"></img></div>
+    <p>I couldn’t figure out how to do this with normal swift without creating an xcode app project. I’m not a swift dev
+      :sadge:. Paste the UIBezierPath code generated by your app, remove context, then print the path’s
+      <code>.cgPath</code> to find the string needed to draw your desired image. Note that you may need multiple
+      CAShapeLayers if you want different opacities for different parts of the image. Now, you can copy any image that
+      you’d like and convert it into a CC module. Pretty cool. But there’s obviously more to this than just having a
+      static image on your sliders. How they are animated is by using LKState/CAState. I still do not fully understand
+      them, but the Medium post i linked above does a fairly good job at explaining them.</p>
+    <h2>Examples</h2>
+    <div class="contentflexboxleft">
+      <div class="contentleft">
+        <img src="../img/img1.webp"></img>
+      </div>
+      <div class="contentright">
+        <img src="../img/img2.webp"></img>
+      </div>
+    </div>
+    <p>I hope that this post has brought more insight to the CAML format and how they can be used by you to theme any
+      Control Center module with a jailbreak/MacDirtyCow (MDC probably won’t work with animations, as the modified file
+      needs to be smaller or the same size as the original).</p>
+  </div>
+</body>
+<script type="text/javascript" src="../navbar.js"></script>
+
+</html>

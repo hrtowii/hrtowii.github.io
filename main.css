@@ -154,6 +154,11 @@ span {
   text-align: center;
 }
 
+.blank {
+  display: inline;
+  color: var(--foreground);
+}
+
 #navbar .navsocial a {
   display: inline-flex;
   text-align: center;
@@ -171,7 +176,9 @@ span {
 }
 
 .centered {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #indexlinks {
@@ -597,5 +604,6 @@ pre { /* block of code similar to ```...``` in discord */
     border: 2px solid var(--foreground);
     padding: 5px;
     font-size: 0.8rem;
+    white-space: pre-wrap;
   }
 }

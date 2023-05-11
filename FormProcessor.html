@@ -1,9 +1,24 @@
-<!DOCTYPE html >
+<!DOCTYPE html>
 <html>
-<head>
-<title>Form Processor</title>
-
-</head>
+	<head>
+		<title>LL's site</title>
+		<meta charset='utf-8'>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta property="og:site_name" content="LL's website">
+		<meta property="og:url" content="https://hrtowii.github.io">
+		<meta property="og:title" content="Website of htrowii">
+		<meta property="og:description" content="Sussy">
+		<meta property="og:type" content="website">
+		<meta name="og:image" itemprop="image" content="../img/oneshotsun.png">
+		<link rel='stylesheet' href='main.css'>
+		<link rel="icon" href="img/oneshotsun.ico">
+		<script src="https://kit.fontawesome.com/e23a98c840.js" crossorigin="anonymous"></script>
+		<style>
+			p {
+				display: inline;
+			}
+		</style>
+	</head>
 <body>
 <script type="text/javascript">
 
@@ -17,13 +32,6 @@ var formArray = formData.split("&");
 var para=new Array();
 var age,color,gender;
 
-function setColor(c){
-	var allBlanks=document.getElementsByClassName("blank");
-	  
-		for (i=0; i<allBlanks.length; i++)
-			allBlanks[i].style.color=c;
-}
-
 function setGender(){
      if (age>12){
 		if (gender=="boy") 
@@ -35,12 +43,22 @@ function setGender(){
 // STOP HIDING FROM INCOMPATIBLE BROWSERS -->
 </script>
 <article>
-<h1>Fun Facts</h1>
-<p>On <span id="bdate" class="blank"></span>, there was a <span id="age" class="blank"></span> years old <span id="gender" class="blank"></span> 
-who studies <span id="diploma" class="blank"></span> at NYP loves to <span id="activity" class="blank"></span> at <span id="location" class="blank"></span>. 
-</p>
-<p>If you are interested to be the friend, call at <span id="contact" class="blank"></span> or write an email to <span id="email" class="blank"></span>
-or visit <span id="website" class="blank"></span> </p>
+<div id="formprocessor" class="content">
+	<h1>Fun Facts</h1>
+	<p>On</p>
+	<p id="bdate" class="blank"></p>
+	<p>, there was a</p>
+	<p id="age" class="blank"></p><p> year old</p>
+	<p id="gender" class="blank"></p>
+	<p>who studies</p>
+	<p id="diploma" class="blank"></p><p> at NYP loves to</p>
+	<p id="activity" class="blank"></p><p> at</p>
+	<p id="location" class="blank"></p><p>.</p>
+	<p>If you are interested to be their friend, call them at</p>
+	<p id="contact" class="blank"></p><p>, write an email to</p>
+	<p id="email" class="blank"></p><p>, or visit</p>
+	<p id="website" class="blank"></p>
+</div>
 </article>
 <script>
 for (var i=0; i < formArray.length; ++i) {
@@ -86,8 +104,6 @@ for (var i=0; i < formArray.length; ++i) {
 	
 }
 setGender();
-setColor(color);
-
 </script>
 </body>
 </html>
