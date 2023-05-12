@@ -56,7 +56,7 @@
         href="https://developer.apple.com/documentation/quartzcore">https://developer.apple.com/documentation/quartzcore</a>
     </p>
     <h2>Using CAML to theme icons?</h2>
-    <p>Some icons use assets from the <a href="http://Assets.car"><code>Assets.car</code></a> in their directory, but
+    <p>Some icons use assets from the <code>Assets.car</code></a> in their directory, but
       most animated icons use CAShapeLayers. The most interesting property of this is <code>path</code>, which is a
       CGPath. CGPaths are something similar to SVGs, so they can be scaled up or down without losing quality. There are
       two ways of theming this, one of which i’ve tried and failed: Replacing CAShapeLayer with a regular CALayer and
@@ -65,7 +65,7 @@
     <p><a
         href="https://developer.apple.com/documentation/quartzcore/calayer/1410773-contents">https://developer.apple.com/documentation/quartzcore/calayer/1410773-contents</a>
     </p>
-    <p>CALayer has a property <contents> that accepts an image and places it on the CC slider. It would have been
+    <p>CALayer has a property &lt;contents&gt; that accepts an image and places it on the CC slider. It would have been
         perfect for my use case until I tried it and… it looked horrible.</p>
     <p>&#x200B;</p>
     <div class="centered"><img src="../img/img5.webp"></img></div>
