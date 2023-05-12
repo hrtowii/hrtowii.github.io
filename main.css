@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Inconsolata:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Fira+Sans:wght@300&display=swap');
+
+@font-face {
+  font-family: "JetBrainsMono Semibold";
+  src: local("JetBrainsMono Semibold"),
+    url("fonts/JetBrainsMono-SemiBold.woff2") format("woff") tech(color-COLRv1), url("fonts/JetBrainsMono-SemiBold.woff2")
+      format("woff");
+}
 
 /* light mode */
 :root {
@@ -17,15 +23,15 @@
 /* dark mode*/
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #232634;
-    --background2: #292c3c;
-    --foreground: #c6d0f5;
-    --date: #f4b8e4;
-    --navbar: #303446;
+    --background: #11111b;
+    --background2: #181825;
+    --foreground: #cdd6f4;
+    --date: #f5c2e7;
+    --navbar: #1e1e2e;
     --navsel: #ca9ee6;
-    --navhover: #DBA5CD;
-    --link: #83a598;
-    --linkhover: #458588;
+    --navhover: #cba6f7;
+    --link: #f5e0dc;
+    --linkhover: #f5c2e7;
   }
 }
 
@@ -42,19 +48,19 @@ body {
 h1 {
   text-align: left;
   font-size: 3rem;
-  font-family: 'Fira Sans', sans-serif;
+  font-family: 'JetBrainsMono Semibold', sans-serif;
 }
 
 h2 {
   text-align: left;
   font-size: 2.25rem;
-  font-family: 'Fira Sans', sans-serif;
+  font-family: 'JetBrainsMono Semibold', sans-serif;
 }
 
 h3 {
   text-align: left;
   font-size: 1.755rem;
-  font-family: 'Fira Sans', sans-serif;
+  font-family: 'JetBrainsMono Semibold', sans-serif;
 }
 
 p {
@@ -71,8 +77,12 @@ a {
 
 a:hover {
   color: var(--linkhover);
-  font-style: italic;
   font-family: 'Inconsolata', sans-serif;
+  transition: color .2s ease;
+  transition-property: color;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
 }
 
 hr.style {
@@ -98,10 +108,10 @@ html {
   visibility: hidden;
 }
 
-.sticky.fa.fa-bars {
+.sticky.fa.fa-bars { /* navbar button floating */
   padding: 0.8rem;
   top: 4vh;
-  left: 4vw;
+  left: 90vw;
   color: var(--foreground);
   overflow: hidden;
   background: var(--background2);
@@ -146,7 +156,7 @@ html {
 
 #navbar .icon {
   float: right;
-  display: block;
+  display: none;
 }
 
 span {
@@ -161,7 +171,7 @@ span {
 
 #navbar .navsocial a {
   display: inline-flex;
-  text-align: center;
+  text-align: left;
 }
 
 #navbar .navsocial :not(a) {
@@ -185,16 +195,17 @@ span {
   overflow: hidden;
   background-color: var(--background2);
   border-radius: 10px;
-  margin-left: 10vw;
-  margin-right: 40.8vw;
+  width: 17vw;
 }
 
 #indexlinks span {
-  display: inline-flex;
+  display: inline-block;
+  width: 100%;
 }
 
 #indexlinks a {
-  display: inline-block;
+  display: block;
+  width: 100%;
   color: var(--foreground);
   text-align: left;
   padding: 14px 16px 14px 16px;
@@ -202,20 +213,16 @@ span {
   font-size: 1.5rem;
   font-family: 'Inconsolata', sans-serif;
 }
-
-#indexlinks a.active {
-  background-color: var(--navsel);
-  color: var(--background);
-  font-family: 'Inconsolata', sans-serif;
+#indexlinks .fab {
+  display: inline; /* index page social media icons */
 }
 
+#indexlinks p {
+  display: inline;
+  text-align: left;
+  margin-left: 12px;
+}
 #indexlinks a:hover {
-  background-color: var(--navhover);
-  color: var(--background);
-  font-family: 'Inconsolata', sans-serif;
-}
-
-#indexlinks a.active:hover {
   background-color: var(--navhover);
   color: var(--background);
   font-family: 'Inconsolata', sans-serif;
@@ -239,10 +246,15 @@ span {
 .contentleft,
 .contentright {
   width: 50vw;
-  /* max-width: 540px; */
   height: auto;
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
+}
+
+.contentactuallyleft {
+  display: flex;
+  justify-content: start;
   align-items: center;
 }
 
@@ -437,7 +449,7 @@ pre { /* block of code similar to ```...``` in discord */
 
 .blogpostbox {
   border: 2px solid var(--foreground);
-  margin: 10px;
+  margin-bottom: 10px;
 }
 
 .blogpost {
@@ -453,9 +465,9 @@ pre { /* block of code similar to ```...``` in discord */
   background-color: var(--navbar);
 }
 
-.blogpost:hover {
+/* .blogpost:hover {
   background-color: var(--tablehover);
-}
+} */
 
 .blogpost a {
   color: var(--navhover);
@@ -530,34 +542,18 @@ pre { /* block of code similar to ```...``` in discord */
     max-width: 400px;
     height: auto;
   }
-
-  .sticky.fa.fa-bars {
-    padding: 0rem;
-    font-size: 1rem;
+  .blogpost a {
+    font-size: 1.0rem;
   }
-
+  .date {
+    font-size: 0.8rem;
+  }
 }
 
 @media only screen and (max-width:1024px) {
-
   #indexlinks {
-    overflow: hidden;
-    background-color: var(--background2);
-    border-radius: 10px;
-    margin-left: 10vw;
-    margin-right: 40.8vw;
+    width: 80vw;
   }
-  
-  #indexlinks a {
-    display: block;
-    color: var(--foreground);
-    text-align: left;
-    padding: 14px 16px 14px 16px;
-    text-decoration: none;
-    font-size: 1.5rem;
-    font-family: 'Inconsolata', sans-serif;
-  }
-
   /* For tablets: */
   .main {
     width: 80%;
@@ -573,6 +569,7 @@ pre { /* block of code similar to ```...``` in discord */
   }
 
   .sticky.fa.fa-bars {
+    left: 80vw;
     padding: 0.8rem;
     font-size: 2rem;
   }

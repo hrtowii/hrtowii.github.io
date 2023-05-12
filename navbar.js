@@ -1,18 +1,3 @@
-window.onscroll = function () { stickyNavbar() };
-window.onresize = function () { stickyNavbar() };
-window.onload = function () { stickyNavbar() };
-
-var sticky = navbar.offsetTop;
-
-function stickyNavbar() {
-    if (window.pageYOffset >= sticky) {
-        navbar.classList.add("sticky")
-    } else {
-        navbar.classList.remove("sticky");
-    }
-
-}
-
 function navExpand() {
     if (navbar.classList.contains("bounceInLeft")) {
         navbar.classList.add("bounceOutLeft");
