@@ -105,7 +105,7 @@ html {
   position: fixed;
   top: 0;
   left: 0;
-  min-height: 110vh; /* please work on iphone */
+  min-height: 120vh; /* please work on iphone */
   overflow-y: auto;
   background-color: var(--navbar);
   z-index: 9999;
@@ -164,7 +164,6 @@ html {
 
 #navbar .icon {
   float: right;
-  display: none;
 }
 
 span {
@@ -580,6 +579,7 @@ pre { /* block of code similar to ```...``` in discord */
     left: 80vw;
     padding: 0.8rem;
     font-size: 2rem;
+    opacity: 0.5;
   }
 
   .contentflexboxleft {
@@ -611,4 +611,9 @@ pre { /* block of code similar to ```...``` in discord */
     font-size: 0.8rem;
     white-space: pre-wrap;
   }
+
+  #navbar .icon {
+    display: none;
+  }
+
 }
