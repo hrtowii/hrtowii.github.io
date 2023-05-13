@@ -164,6 +164,7 @@ html {
 
 #navbar .icon {
   float: right;
+  display: none;
 }
 
 span {
@@ -177,7 +178,8 @@ span {
 }
 
 #navbar .navsocial a {
-  display: inline-flex;
+  display: none;
+  /* display: inline-flex; */
   text-align: left;
 }
 
@@ -188,6 +190,7 @@ span {
 /* extra stuff */
 .content {
   padding-top: 20px;
+  padding-bottom: 20px;
   padding-left: 10vw;
   padding-right: 10vw;
 }
@@ -510,12 +513,11 @@ pre { /* block of code similar to ```...``` in discord */
 
   /* For mobile phones: */
   .content {
-    padding-left: 10vw;
-    padding-right: 10vw;
     font-size: 1.3rem;
     column-gap: 10px;
+    row-gap: 10px;
   }
-  
+
   .desktoponly {
     display: none;
   }
@@ -530,18 +532,12 @@ pre { /* block of code similar to ```...``` in discord */
 
   .contentflexboxleft {
     flex-direction: column-reverse;
+    justify-content: center;
   }
 
   .contentflexboxright {
     flex-direction: column;
-  }
-
-  .contentright,
-  .contentleft {
-    width: 80vw;
-    width: 100%;
-    max-width: 360px;
-    height: auto;
+    justify-content: center;
   }
 
   .contentcenter {
@@ -584,26 +580,26 @@ pre { /* block of code similar to ```...``` in discord */
 
   .contentflexboxleft {
     flex-direction: column-reverse;
+    justify-content: center;
   }
 
   .contentflexboxright {
     flex-direction: column;
+    justify-content: center;
   }
 
   .contentright,
   .contentleft,
   .contentcenter {
     width: 80vw;
-    width: 100%;
-    max-width: 360px;
-    height: auto;
+    margin-bottom: 5vh;
   }
   code { /* single line, similar to ` ` in discord */
     /* border: 1px solid var(--foreground);
     padding: 5px; */
     font-size: 0.8rem;
   }
-  
+
   pre { /* block of code similar to ```...``` in discord */
     display: block;
     border: 2px solid var(--foreground);
